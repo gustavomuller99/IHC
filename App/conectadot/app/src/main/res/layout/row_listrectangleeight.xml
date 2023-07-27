@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listrectangleeightRowModel" type="com.conectadot.app.modules.telaprincipalabrigo.data.model.ListrectangleeightRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearRowrectangleeight"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylegray_201cornerRadius">
+        <ImageView android:id="@+id/imageRectangleEight"
+            android:layout_height="@dimen/_80pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:layout_marginStart="@dimen/_9pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_width="@dimen/_80pxh"
+            android:scaleType="fitXY" cornerRadius="@{@dimen/_16pxh}"
+            imageRes="@{@drawable/img_rectangle8}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_rectangle8"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnnomekyuubi"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15pxv"
+            android:layout_marginEnd="@dimen/_45pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_18pxv"
+            android:layout_weight="0.66" android:layout_width="0dp" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtNomeKyuubi"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listrectangleeightRowModel.txtNomeKyuubi}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome_kyuubi2"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtRaaLuludaP"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9pxv"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listrectangleeightRowModel.txtRaaLuludaP}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/msg_ra_a_lulu_da_p"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtPortePequeno"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_9pxv"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{listrectangleeightRowModel.txtPortePequeno}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_porte_pequeno"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

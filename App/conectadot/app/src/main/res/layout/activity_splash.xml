@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="splashVM" type="com.conectadot.app.modules.splash.data.viewmodel.SplashVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearSplash"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyledeep_purple_A100">
+        <ImageView android:id="@+id/imageAdoptapetcua"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_200pxh"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_150pxv"
+            android:layout_width="@dimen/_200pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_adoptapetcua"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_adoptapetcua"/>
+        <TextView android:gravity="center_horizontal"
+            android:id="@+id/txtBemvindoaoCo"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_width="match_parent"
+            android:text="@{splashVM.splashModel.txtBemvindoaoCo}"
+            style="@style/txtInterbold32" tools:text="@string/msg_bem_vindo_ao_co"/>
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtMilharesdepet"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{splashVM.splashModel.txtMilharesdepet}"
+            style="@style/txtInterregular15" tools:text="@string/msg_milhares_de_pet"/>
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearRowcomeeagora"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_82pxv"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_25pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal" style="@style/groupStyleamber_200cornerRadius">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtComeeagora"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_13pxv"
+                android:layout_marginStart="@dimen/_100pxh"
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_weight="0.9" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{splashVM.splashModel.txtComeeagora}"
+                style="@style/txtInterbold14" tools:text="@string/lbl_come_e_agora"/>
+            <ImageView android:id="@+id/imageArrowright"
+                android:layout_height="@dimen/_8pxh"
+                android:layout_marginBottom="@dimen/_18pxv"
+                android:layout_marginEnd="@dimen/_78pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:layout_width="@dimen/_11pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrowright"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrowright"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

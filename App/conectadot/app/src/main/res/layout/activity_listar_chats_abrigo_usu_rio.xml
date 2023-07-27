@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listarChatsAbrigoUsuRioVM" type="com.conectadot.app.modules.listarchatsabrigousurio.data.viewmodel.ListarChatsAbrigoUsuRioVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnarrowleft"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowarrowleft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStyledeep_purple_A100">
+                <ImageView android:id="@+id/imageArrowleft"
+                    android:layout_height="@dimen/_20pxh"
+                    android:layout_marginBottom="@dimen/_19pxv"
+                    android:layout_marginStart="@dimen/_17pxh"
+                    android:layout_marginTop="@dimen/_24pxv"
+                    android:layout_width="@dimen/_28pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowup"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowup"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtMeuschats"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_21pxv"
+                    android:layout_marginEnd="@dimen/_132pxh"
+                    android:layout_marginStart="@dimen/_84pxh"
+                    android:layout_marginTop="@dimen/_22pxv"
+                    android:layout_weight="0.77"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtMeuschats}"
+                    style="@style/txtInterbold17" tools:text="@string/lbl_meus_chats"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumnellipseeight"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_32pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadius">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowellipseeight"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_18pxh"
+                android:layout_marginStart="@dimen/_18pxh"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylegray_1">
+                <ImageView android:id="@+id/imageEllipseEight"
+                    android:layout_height="@dimen/_37pxh"
+                    android:layout_marginBottom="@dimen/_7pxv"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="@dimen/_37pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_ellipse8}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse8"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearColumnname"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_9pxv"
+                    android:layout_marginStart="@dimen/_14pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_weight="0.72"
+                    android:layout_width="0dp" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtName"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_width="match_parent"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtName}"
+                        style="@style/txtIntersemibold12" tools:text="@string/msg_la_ador_abrigo"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtSegueumaimage"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_6pxv"
+                        android:layout_width="match_parent"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtSegueumaimage}"
+                        style="@style/txtInterregular10" tools:text="@string/msg_segue_uma_image"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal"
+                    android:id="@+id/linearColumntime"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8pxv"
+                    android:layout_marginEnd="@dimen/_8pxh"
+                    android:layout_marginStart="@dimen/_14pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_weight="0.15"
+                    android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylecornerRadius_2">
+                    <TextView android:ellipsize="end"
+                        android:gravity="start"
+                        android:id="@+id/txtTime"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtTime}"
+                        style="@style/txtInterregular10" tools:text="@string/lbl_11_30_am"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtFrame2891"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12pxh"
+                        android:layout_marginStart="@dimen/_12pxh"
+                        android:layout_marginTop="@dimen/_4pxv"
+                        android:layout_width="wrap_content"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:paddingEnd="@dimen/_6pxh"
+                        android:paddingStart="@dimen/_6pxh"
+                        android:paddingTop="@dimen/_4pxv"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtFrame2891}"
+                        style="@style/txtSolidRounded" tools:text="@string/lbl_2"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowellipsetwo"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_403pxv"
+                android:layout_marginEnd="@dimen/_18pxh"
+                android:layout_marginStart="@dimen/_18pxh"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylegray_1">
+                <ImageView android:id="@+id/imageEllipseTwo"
+                    android:layout_height="@dimen/_37pxh"
+                    android:layout_marginBottom="@dimen/_7pxv"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="@dimen/_37pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_ellipse2}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse2"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearColumnnameOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_122pxh"
+                    android:layout_marginStart="@dimen/_14pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_weight="0.8"
+                    android:layout_width="0dp" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtNameOne"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtNameOne}"
+                        style="@style/txtIntersemibold12" tools:text="@string/msg_outro_abrigo_de"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtOii"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_5pxv"
+                        android:layout_width="wrap_content"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:singleLine="true"
+                        android:text="@{listarChatsAbrigoUsuRioVM.listarChatsAbrigoUsuRioModel.txtOii}"
+                        style="@style/txtInterregular10" tools:text="@string/lbl_oii"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

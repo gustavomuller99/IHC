@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="telaPrincipalAbrigoVM" type="com.conectadot.app.modules.telaprincipalabrigo.data.viewmodel.TelaPrincipalAbrigoVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStackiconsaxboldme"
+        android:layout_height="match_parent" android:layout_width="match_parent">
+        <LinearLayout android:id="@+id/linearTelaprincipal"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStyledeep_purple_A100">
+            <ImageView android:id="@+id/imageIconsaxBoldme"
+                android:layout_height="@dimen/_25pxh"
+                android:layout_marginEnd="@dimen/_17pxh"
+                android:layout_marginStart="@dimen/_17pxh"
+                android:layout_marginTop="@dimen/_32pxv"
+                android:layout_width="@dimen/_25pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_iconsaxboldme"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_iconsaxboldme"/>
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearColumnrectangleeight"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_96pxv"
+                android:layout_marginEnd="@dimen/_17pxh"
+                android:layout_marginStart="@dimen/_17pxh"
+                android:layout_marginTop="@dimen/_46pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylewhite_2">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:gravity="center_horizontal"
+                    android:id="@+id/recyclerListrectangleeight"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_91pxv"
+                    android:layout_marginEnd="@dimen/_12pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_marginTop="@dimen/_23pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_13pxh}"
+                    style="@style/groupStylecornerRadius_1"
+                    tools:itemCount="3" tools:listitem="@layout/row_listrectangleeight"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:backgroundTint="@color/amber_200"
+            android:id="@+id/floatingBtnFloatingactionbutton"
+            android:layout_gravity="bottom|end"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_17pxv"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="wrap_content"
+            app:fabCustomSize="@dimen/_64pxh"
+            app:srcCompat="@drawable/img_plus" app:tint="@color/black_900"/>
+    </FrameLayout>
+</layout>
