@@ -42,15 +42,18 @@
                 android:layout_marginStart="@dimen/_11pxh"
                 android:layout_marginTop="@dimen/_16pxv"
                 android:layout_width="wrap_content" android:orientation="horizontal">
+
                 <ImageButton
-                    android:background="@drawable/rectangle_bg_amber_200_radius_32"
                     android:id="@+id/btnLock"
-                    android:layout_height="@dimen/_64pxh"
                     android:layout_width="@dimen/_64pxh"
+                    android:layout_height="@dimen/_64pxh"
+                    android:layout_marginStart="@dimen/_67pxv"
+                    android:background="@drawable/rectangle_bg_amber_200_radius_32"
                     android:paddingHorizontal="@dimen/_20pxh"
                     android:paddingVertical="@dimen/_20pxv"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/img_lock" tools:ignore="ContentDescription"/>
+                    android:src="@drawable/img_lock"
+                    tools:ignore="ContentDescription" />
                 <ImageButton
                     android:background="@drawable/rectangle_bg_amber_200_radius_32"
                     android:id="@+id/btnFacebook"
@@ -68,26 +71,31 @@
                 android:layout_marginTop="@dimen/_72pxv"
                 android:layout_width="match_parent"
                 android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
-                <ImageView android:id="@+id/imageUser"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginBottom="@dimen/_17pxv"
-                    android:layout_marginStart="@dimen/_27pxh"
-                    android:layout_marginTop="@dimen/_18pxv"
+
+                <ImageView
+                    android:id="@+id/imageUser"
                     android:layout_width="@dimen/_18pxh"
+                    android:layout_height="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_27pxh"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_marginBottom="@dimen/_17pxv"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_user"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
-                <TextView android:ellipsize="end"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_user" />
+
+                <EditText
                     android:id="@+id/txtEmailaddress"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_19pxv"
-                    android:layout_marginEnd="@dimen/_144pxh"
+                    android:layout_width="@dimen/_200pxh"
+                    android:layout_height="@dimen/_45pxh"
                     android:layout_marginStart="@dimen/_16pxh"
                     android:layout_marginTop="@dimen/_19pxv"
-                    android:layout_weight="0.84"
-                    android:layout_width="0dp" android:singleLine="true"
-                    android:text="@{loginVM.loginModel.txtEmailaddress}"
-                    style="@style/txtInterregular14" tools:text="@string/lbl_email_address"/>
+                    android:layout_marginEnd="@dimen/_144pxh"
+                    android:layout_marginBottom="@dimen/_19pxv"
+                    android:ellipsize="end"
+                    android:hint="Endereço de email"
+                    android:inputType="text|textEmailAddress"
+                    android:singleLine="true" />
             </LinearLayout>
             <LinearLayout android:gravity="start"
                 android:id="@+id/linearRowiconsaxboldlo"
@@ -95,25 +103,31 @@
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_width="match_parent"
                 android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
-                <ImageView android:id="@+id/imageIconsaxBoldlo"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginBottom="@dimen/_17pxv"
-                    android:layout_marginStart="@dimen/_27pxh"
-                    android:layout_marginTop="@dimen/_18pxv"
+
+                <ImageView
+                    android:id="@+id/imageIconsaxBoldlo"
                     android:layout_width="@dimen/_20pxh"
+                    android:layout_height="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_27pxh"
+                    android:layout_marginTop="@dimen/_32pxv"
+                    android:layout_marginBottom="@dimen/_17pxv"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_iconsaxboldlo"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_iconsaxboldlo"/>
-                <ImageView android:id="@+id/imageMenu"
-                    android:layout_height="@dimen/_6pxh"
-                    android:layout_marginBottom="@dimen/_24pxv"
-                    android:layout_marginEnd="@dimen/_140pxh"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_iconsaxboldlo" />
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="@dimen/_200pxh"
+                    android:layout_height="@dimen/_40pxh"
                     android:layout_marginStart="@dimen/_17pxh"
                     android:layout_marginTop="@dimen/_26pxv"
-                    android:layout_width="@dimen/_96pxh"
+                    android:layout_marginEnd="@dimen/_140pxh"
+                    android:layout_marginBottom="@dimen/_24pxv"
+                    android:hint="Senha"
+                    android:inputType="text|textPassword"
                     android:scaleType="fitXY"
-                    android:src="@drawable/img_menu"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_menu"/>
+                    android:singleLine="true" />
             </LinearLayout>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtEsqueceuasenh"
