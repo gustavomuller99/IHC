@@ -15,16 +15,17 @@
             android:layout_width="match_parent" app:contentInsetStart="0dp">
             <LinearLayout android:gravity="start"
                 android:id="@+id/linearRowarrowleft"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_67pxh"
                 android:layout_width="match_parent"
                 android:orientation="horizontal" style="@style/groupStyledeep_purple_A100">
                 <ImageView android:id="@+id/imageArrowleft"
-                    android:layout_height="@dimen/_20pxh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_19pxv"
                     android:layout_marginStart="@dimen/_17pxh"
                     android:layout_marginTop="@dimen/_24pxv"
-                    android:layout_width="@dimen/_28pxh"
                     android:scaleType="fitXY"
+                    android:rotation="-90"
                     android:src="@drawable/img_arrowup"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_arrowup"/>
                 <TextView android:ellipsize="end"
