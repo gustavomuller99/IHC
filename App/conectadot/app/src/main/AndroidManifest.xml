@@ -35,6 +35,8 @@
             android:name="com.conectadot.app.modules.criarcontausurio.ui.CriarContaUsuRioActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.conectadot.app.modules.login.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivity" android:screenOrientation="portrait"/>
         <activity android:exported="true"
             android:name="com.conectadot.app.modules.splash.ui.SplashActivity" android:screenOrientation="portrait">
             <intent-filter>

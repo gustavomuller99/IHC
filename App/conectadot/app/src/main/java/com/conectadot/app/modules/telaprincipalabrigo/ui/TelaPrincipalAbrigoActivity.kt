@@ -5,6 +5,9 @@ import androidx.activity.viewModels
 import com.conectadot.app.R
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityTelaPrincipalAbrigoBinding
+import com.conectadot.app.modules.listarchatsabrigousurio.ui.ListarChatsAbrigoUsuRioActivity
+import com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivity
+import com.conectadot.app.modules.novoeditaranimalabrigo.ui.NovoEditarAnimalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.model.ListrectangleeightRowModel
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.viewmodel.TelaPrincipalAbrigoVM
 import kotlin.Int
@@ -17,19 +20,30 @@ class TelaPrincipalAbrigoActivity :
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
-    val listrectangleeightAdapter =
-    ListrectangleeightAdapter(viewModel.listrectangleeightList.value?:mutableListOf())
-    binding.recyclerListrectangleeight.adapter = listrectangleeightAdapter
-    listrectangleeightAdapter.setOnItemClickListener(
-    object : ListrectangleeightAdapter.OnItemClickListener {
+
+    val listrectangleeightAdapter = ListrectangleeightAdapter(viewModel.listrectangleeightList.value?:mutableListOf())
+
+    listrectangleeightAdapter.setOnItemClickListener(object : ListrectangleeightAdapter.OnItemClickListener {
       override fun onItemClick(view:View, position:Int, item : ListrectangleeightRowModel) {
         onClickRecyclerListrectangleeight(view, position, item)
       }
-    }
-    )
+    })
+
+    binding.recyclerListrectangleeight.adapter = listrectangleeightAdapter
+
     viewModel.listrectangleeightList.observe(this) {
       listrectangleeightAdapter.updateData(it)
     }
+
+    binding.imageIconsaxBoldme.setOnClickListener {
+      startActivity(ListarChatsAbrigoUsuRioActivity.getIntent(this, null))
+      overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
+    }
+
+    binding.floatingBtnFloatingactionbutton.setOnClickListener {
+      startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, null))
+    }
+
     binding.telaPrincipalAbrigoVM = viewModel
   }
 
@@ -41,8 +55,7 @@ class TelaPrincipalAbrigoActivity :
     position: Int,
     item: ListrectangleeightRowModel
   ): Unit {
-    when(view.id) {
-    }
+    startActivity(MaisDetalhesAbrigoActivity.getIntent(this, null))
   }
 
   companion object {

@@ -6,25 +6,36 @@
     </data>
     <FrameLayout android:id="@+id/frameStackellipsetwo"
         android:layout_height="match_parent" android:layout_width="match_parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:backgroundTint="@color/amber_200"
-            android:id="@+id/floatingBtnFloatingactionbutton"
-            android:layout_gravity="bottom|end"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_30pxh"
-            android:layout_marginStart="@dimen/_30pxh"
-            android:layout_marginTop="@dimen/_20pxv"
-            android:layout_width="wrap_content"
-            app:fabCustomSize="@dimen/_64pxh"
-            app:srcCompat="@drawable/img_edit" app:tint="@color/black_900"/>
         <LinearLayout android:id="@+id/linearColumn"
-            android:layout_gravity="start"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:gravity="start"
+                android:id="@+id/toolbarToolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" app:contentInsetStart="0dp">
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearRowarrowleft"
+                    android:layout_height="@dimen/_67pxh"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal" style="@style/groupStyledeep_purple_A100">
+                    <ImageView
+                        android:id="@+id/imageArrowleft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_24pxh"
+                        android:layout_marginTop="@dimen/_24pxv"
+                        android:layout_marginBottom="@dimen/_19pxv"
+                        android:rotation="-90"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrowup"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_arrowup" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
             <LinearLayout android:id="@+id/linearColumnellipsetwo"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadius">
                 <ImageView android:id="@+id/imageEllipseTwo"
@@ -128,14 +139,26 @@
                 <TextView android:gravity="start"
                     android:id="@+id/txtInformaesadi"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_161pxv"
                     android:layout_marginEnd="@dimen/_32pxh"
                     android:layout_marginStart="@dimen/_32pxh"
                     android:layout_marginTop="@dimen/_5pxv"
                     android:layout_width="match_parent"
                     android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtInformaesadi}"
-                    style="@style/txtInterbold13" tools:text="@string/msg_informa_es_adi"/>
+                    style="@style/txtIntersemibold13_1" tools:text="@string/msg_informa_es_adi"/>
             </LinearLayout>
         </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:backgroundTint="@color/amber_200"
+            android:id="@+id/floatingBtnFloatingactionbutton"
+            android:layout_gravity="bottom|end"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            app:borderWidth="0dp"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="wrap_content"
+            app:fabCustomSize="@dimen/_64pxh"
+            app:srcCompat="@drawable/img_edit" app:tint="@color/black_900"/>
     </FrameLayout>
 </layout>
