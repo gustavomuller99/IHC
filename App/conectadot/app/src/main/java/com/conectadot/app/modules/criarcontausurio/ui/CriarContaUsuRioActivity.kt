@@ -63,7 +63,12 @@ class CriarContaUsuRioActivity :
   override fun setUpClicks(): Unit {
     binding.imageArrowleft.setOnClickListener {
       finish()
+      overridePendingTransition(R.anim.anim_pull_left, R.anim.anim_push_right)
     }
+  }
+
+  override fun onBackPressed() {
+    overridePendingTransition(R.anim.anim_pull_left, R.anim.anim_push_right)
   }
 
   companion object {

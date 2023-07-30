@@ -65,70 +65,29 @@
                     android:scaleType="fitCenter"
                     android:src="@drawable/img_facebook" tools:ignore="ContentDescription"/>
             </LinearLayout>
-            <LinearLayout android:gravity="start"
-                android:id="@+id/linearRowuser"
+            <EditText android:gravity="start"
+                android:id="@+id/etEmail"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_72pxv"
                 android:layout_width="match_parent"
-                android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
-
-                <ImageView
-                    android:id="@+id/imageUser"
-                    android:layout_width="@dimen/_18pxh"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginStart="@dimen/_27pxh"
-                    android:layout_marginTop="@dimen/_30pxv"
-                    android:layout_marginBottom="@dimen/_17pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_user"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_user" />
-
-                <EditText
-                    android:id="@+id/txtEmailaddress"
-                    android:layout_width="@dimen/_200pxh"
-                    android:layout_height="@dimen/_45pxh"
-                    android:layout_marginStart="@dimen/_16pxh"
-                    android:layout_marginTop="@dimen/_19pxv"
-                    android:layout_marginEnd="@dimen/_144pxh"
-                    android:layout_marginBottom="@dimen/_19pxv"
-                    android:ellipsize="end"
-                    android:hint="Endereço de email"
-                    android:inputType="text|textEmailAddress"
-                    android:singleLine="true" />
-            </LinearLayout>
-            <LinearLayout android:gravity="start"
-                android:id="@+id/linearRowiconsaxboldlo"
+                android:padding="@dimen/_14pxh"
+                android:drawableStart="@drawable/img_user"
+                android:drawablePadding="@dimen/_27pxh"
+                android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius"
+                android:hint="Endereço de email">
+            </EditText>
+            <EditText android:gravity="start"
+                android:id="@+id/etPassword"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_width="match_parent"
+                android:padding="@dimen/_14pxh"
+                android:drawableStart="@drawable/img_iconsaxboldlo"
+                android:drawablePadding="@dimen/_27pxh"
+                android:hint="Senha"
+                android:inputType="textPassword"
                 android:orientation="horizontal" style="@style/groupStylewhite_A700cornerRadius">
-
-                <ImageView
-                    android:id="@+id/imageIconsaxBoldlo"
-                    android:layout_width="@dimen/_20pxh"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginStart="@dimen/_27pxh"
-                    android:layout_marginTop="@dimen/_32pxv"
-                    android:layout_marginBottom="@dimen/_17pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_iconsaxboldlo"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_iconsaxboldlo" />
-
-                <EditText
-                    android:id="@+id/txtPassword"
-                    android:layout_width="@dimen/_200pxh"
-                    android:layout_height="@dimen/_40pxh"
-                    android:layout_marginStart="@dimen/_17pxh"
-                    android:layout_marginTop="@dimen/_26pxv"
-                    android:layout_marginEnd="@dimen/_140pxh"
-                    android:layout_marginBottom="@dimen/_24pxv"
-                    android:hint="Senha"
-                    android:inputType="text|textPassword"
-                    android:scaleType="fitXY"
-                    android:singleLine="true" />
-            </LinearLayout>
+            </EditText>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtEsqueceuasenh"
                 android:layout_gravity="end"

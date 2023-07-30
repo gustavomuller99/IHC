@@ -15,15 +15,15 @@
             android:layout_width="match_parent" app:contentInsetStart="0dp">
             <LinearLayout android:gravity="start"
                 android:id="@+id/linearRowarrowleft"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_67pxh"
                 android:layout_width="match_parent"
                 android:orientation="horizontal" style="@style/groupStyledeep_purple_A100">
 
                 <ImageView
                     android:id="@+id/imageArrowleft"
-                    android:layout_width="@dimen/_28pxh"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginStart="@dimen/_17pxh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24pxh"
                     android:layout_marginTop="@dimen/_24pxv"
                     android:layout_marginBottom="@dimen/_19pxv"
                     android:rotation="-90"

@@ -15,15 +15,15 @@
             android:layout_width="match_parent" app:contentInsetStart="0dp">
             <LinearLayout android:gravity="start"
                 android:id="@+id/linearRowarrowleft"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_67pxh"
                 android:layout_width="match_parent"
                 android:orientation="horizontal" style="@style/groupStyledeep_purple_A100">
 
                 <ImageView
                     android:id="@+id/imageArrowleft"
-                    android:layout_width="@dimen/_28pxh"
-                    android:layout_height="@dimen/_20pxh"
-                    android:layout_marginStart="@dimen/_17pxh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24pxh"
                     android:layout_marginTop="@dimen/_24pxv"
                     android:layout_marginBottom="@dimen/_19pxv"
                     android:rotation="-90"
@@ -35,7 +35,6 @@
                     android:id="@+id/txtCriarconta"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_21pxv"
-                    android:layout_marginEnd="@dimen/_134pxh"
                     android:layout_marginStart="@dimen/_86pxh"
                     android:layout_marginTop="@dimen/_22pxv"
                     android:layout_weight="0.77"
@@ -151,55 +150,22 @@
             android:text="@={criarContaUsuRioVM.criarContaUsuRioModel.etGroupTwoValue}"
             android:textColorHint="@color/black_900"
             style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
-        <FrameLayout android:id="@+id/frameStackcadastrar"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="@dimen/_57pxv"
-            android:layout_marginBottom="@dimen/_19pxv"
-            android:layout_marginEnd="@dimen/_30pxh"
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end"
+            android:id="@+id/btnCadastrarOne"
+            android:layout_gravity="bottom|start"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:layout_marginStart="@dimen/_30pxh"
-            android:layout_marginTop="@dimen/_98pxv" android:layout_width="@dimen/_300pxh">
-            <LinearLayout android:id="@+id/linearRowcadastrar"
-                android:layout_gravity="top|start"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10pxv"
-                android:layout_width="match_parent"
-                android:orientation="horizontal" style="@style/groupStyleamber_200cornerRadius">
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtCadastrar"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_14pxv"
-                    android:layout_marginStart="@dimen/_116pxh"
-                    android:layout_marginTop="@dimen/_14pxv"
-                    android:layout_weight="0.86"
-                    android:layout_width="0dp" android:singleLine="true"
-                    android:text="@{criarContaUsuRioVM.criarContaUsuRioModel.txtCadastrar}"
-                    style="@style/txtInterbold14" tools:text="@string/lbl_cadastrar"/>
-                <ImageView android:id="@+id/imageArrowright"
-                    android:layout_height="@dimen/_8pxh"
-                    android:layout_marginBottom="@dimen/_18pxv"
-                    android:layout_marginEnd="@dimen/_78pxh"
-                    android:layout_marginStart="@dimen/_25pxh"
-                    android:layout_marginTop="@dimen/_18pxv"
-                    android:layout_width="@dimen/_11pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_arrowright"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowright"/>
-            </LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
-                android:ellipsize="end" android:gravity="center"
-                android:id="@+id/btnCadastrarOne"
-                android:layout_gravity="bottom|start"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10pxv"
-                android:layout_width="match_parent"
-                android:paddingBottom="@dimen/_14pxv"
-                android:paddingEnd="@dimen/_30pxh"
-                android:paddingStart="@dimen/_30pxh"
-                android:paddingTop="@dimen/_14pxv"
-                android:singleLine="true"
-                android:text="@string/lbl_cadastrar"
-                android:textAllCaps="false"
-                style="@style/btnSolidRounded" tools:text="@string/lbl_cadastrar"/>
-        </FrameLayout>
+            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_14pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_14pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_cadastrar"
+            android:textAllCaps="false"
+            style="@style/btnSolidRounded" tools:text="@string/lbl_cadastrar"/>
     </LinearLayout>
 </layout>

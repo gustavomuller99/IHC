@@ -50,11 +50,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     super.onCreate(savedInstanceState)
 
     binding.btnEntrarOne.setOnClickListener(View.OnClickListener {
-      if(binding.txtEmailaddress.text.toString() == "user@domain.com" && binding.txtPassword.text.toString() == "1234"){
+      if(binding.etEmail.text.toString() == "user@domain.com" && binding.etPassword.text.toString() == "1234"){
         val intent = Intent(this, TelaPrincipalUsuRioActivity()::class.java)
         startActivity(intent)
         }
-      else if(binding.txtEmailaddress.text.toString() == "shelter@domain.com" && binding.txtPassword.text.toString() == "1234"){
+      else if(binding.etEmail.text.toString() == "shelter@domain.com" && binding.etPassword.text.toString() == "1234"){
         val intent = Intent(this, TelaPrincipalAbrigoActivity()::class.java)
         startActivity(intent)
       }
@@ -64,28 +64,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     })
   }
   override fun setUpClicks(): Unit {
-    binding.btnFacebook.setOnClickListener {
-      LoginManager.getInstance().logInWithReadPermissions(this, listOf("public_profile"))
-      facebookLogin.login(callbackManager,object : FacebookCallback<LoginResult> {
-        override fun onSuccess(result: LoginResult?) {
-        }
-        override fun onError(error: FacebookException?) {
-        }
-        override fun onCancel() {
-        }
-        })
-      }
-
     binding.txtNopossuicont.setOnClickListener {
       val intent = Intent(this, CriarContaUsuRioActivity()::class.java)
       startActivity(intent)
+      overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
     }
 
     binding.txtAbrigodeanima.setOnClickListener {
       val intent = Intent(this, CriarContaAbrigoActivity()::class.java)
       startActivity(intent)
+      overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
     }
-
   }
 
     companion object {
