@@ -11,7 +11,7 @@
         android:orientation="vertical" style="@style/groupStylewhite_A700">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarToolbar"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_67pxh"
             android:layout_width="match_parent"
             app:contentInsetStart="0dp" style="@style/groupStyledeep_purple_A100">
             <LinearLayout android:gravity="start"
@@ -23,11 +23,13 @@
                 android:layout_marginTop="@dimen/_15pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <ImageView android:id="@+id/imageArrowleft"
-                    android:layout_height="@dimen/_20pxh"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_9pxv"
                     android:layout_marginTop="@dimen/_9pxv"
-                    android:layout_width="@dimen/_28pxh"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_width="wrap_content"
                     android:scaleType="fitXY"
+                    android:rotation="-90"
                     android:src="@drawable/img_arrowup"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_arrowup"/>
                 <ImageView android:id="@+id/imageEllipseEight"
@@ -43,20 +45,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_8pxv"
                     android:layout_marginStart="@dimen/_9pxh"
-                    android:layout_marginTop="@dimen/_11pxv"
+                    android:layout_marginTop="@dimen/_9pxv"
                     android:layout_weight="0.76"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{chatAbrigoUsuRioVM.chatAbrigoUsuRioModel.txtLaadorAbrigo}"
                     style="@style/txtInterbold16" tools:text="@string/msg_la_ador_abrigo2"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-        <LinearLayout android:gravity="center_horizontal"
+        <LinearLayout
             android:id="@+id/linearChatAbrigoU"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical" style="@style/groupStylewhite_A700">
+            android:orientation="vertical">
             <LinearLayout android:id="@+id/linearColumnavatar"
-                android:layout_height="match_parent"
+                android:layout_height="@dimen/_530pxh"
                 android:layout_width="match_parent"
                 android:orientation="vertical" style="@style/groupStylewhite_3">
                 <LinearLayout android:gravity="start"
@@ -64,20 +66,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_10pxh"
                     android:layout_marginStart="@dimen/_7pxh"
-                    android:layout_marginTop="@dimen/_169pxv"
+                    android:layout_marginTop="@dimen/_190pxv"
                     android:layout_width="match_parent" android:orientation="horizontal">
-                    <ImageButton
-                        android:background="@drawable/img_avatar"
-                        android:id="@+id/btnAvatar"
+                    <ImageView android:id="@+id/btnAvatar"
                         android:layout_height="@dimen/_27pxh"
                         android:layout_marginBottom="@dimen/_26pxv"
                         android:layout_width="@dimen/_27pxh"
-                        android:paddingHorizontal="@dimen/_11pxh"
-                        android:paddingVertical="@dimen/_11pxv"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_ellipse8" tools:ignore="ContentDescription"/>
+                        android:scaleType="fitXY"
+                        cornerRadius="@{@dimen/_20pxh}"
+                        imageRes="@{@drawable/img_ellipse8}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse8"/>
                     <ImageView android:id="@+id/imageFile"
-                        android:layout_height="@dimen/_54pxh"
+                        android:layout_height="@dimen/_56pxh"
                         android:layout_marginStart="@dimen/_3pxh"
                         android:layout_width="@dimen/_13pxh"
                         android:scaleType="fitXY"
@@ -85,9 +85,9 @@
                         tools:ignore="ContentDescription" tools:src="@drawable/img_file"/>
                     <LinearLayout android:gravity="start"
                         android:id="@+id/linearBubbleright"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.87"
-                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56pxh"
+                        android:layout_marginStart="-1dp"
+                        android:layout_width="wrap_content"
                         android:orientation="vertical" style="@style/groupStyledeep_purple_A100cornerRadius">
                         <TextView android:ellipsize="end"
                             android:id="@+id/txtName"
@@ -105,7 +105,7 @@
                             android:layout_marginEnd="@dimen/_8pxh"
                             android:layout_marginTop="@dimen/_3pxv"
                             android:layout_width="match_parent" android:orientation="horizontal">
-                            <EditText android:ellipsize="end"
+                            <TextView
                                 android:hint="@string/msg_segue_uma_image"
                                 android:id="@+id/etText"
                                 android:inputType="text"
@@ -124,7 +124,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="@dimen/_1pxv"
                                 android:layout_marginStart="@dimen/_6pxh"
-                                android:layout_marginTop="@dimen/_14pxv"
+                                android:layout_marginTop="@dimen/_12pxv"
                                 android:layout_weight="0.18"
                                 android:layout_width="0dp"
                                 android:singleLine="true"
@@ -137,7 +137,7 @@
                     android:id="@+id/linearColumnesseodog"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_48pxh"
-                    android:layout_marginStart="@dimen/_48pxh"
+                    android:layout_marginStart="@dimen/_45pxh"
                     android:layout_marginTop="@dimen/_10pxv"
                     android:layout_width="wrap_content"
                     android:orientation="vertical" style="@style/groupStyledeep_purple_1">
@@ -178,43 +178,41 @@
                 </LinearLayout>
                 <LinearLayout android:gravity="end"
                     android:id="@+id/linearMessagebubble1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_36pxh"
                     android:layout_marginBottom="@dimen/_94pxv"
                     android:layout_marginEnd="@dimen/_10pxh"
                     android:layout_marginStart="@dimen/_10pxh"
                     android:layout_marginTop="@dimen/_9pxv"
+                    android:layout_gravity="end"
                     android:layout_width="wrap_content" android:orientation="horizontal">
                     <LinearLayout android:id="@+id/linearBody1"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/_34pxh"
                         android:layout_marginBottom="@dimen/_1pxv"
-                        android:layout_marginTop="@dimen/_1pxv"
                         android:layout_weight="0.92"
                         android:layout_width="0dp"
                         android:orientation="horizontal" style="@style/groupStylebluegray_100cornerRadius">
-                        <EditText android:ellipsize="end"
+                        <TextView
                             android:hint="@string/lbl_obrigada"
                             android:id="@+id/etTextOne"
                             android:inputType="text"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_3pxv"
-                            android:layout_marginStart="@dimen/_6pxh"
+                            android:layout_marginStart="@dimen/_4pxh"
                             android:layout_marginTop="@dimen/_4pxv"
-                            android:layout_weight="0.56"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:lineSpacingExtra="@dimen/_3pxh"
                             android:paddingBottom="@dimen/_10pxv"
                             android:singleLine="true"
                             android:text="@={chatAbrigoUsuRioVM.chatAbrigoUsuRioModel.etTextOneValue}"
                             android:textColorHint="@color/black_900"
                             style="@style/etInterregular12" tools:ignore="Autofill"/>
-                        <TextView android:ellipsize="end"
+                        <TextView
                             android:id="@+id/txtTimeTwo"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_3pxv"
                             android:layout_marginStart="@dimen/_6pxh"
-                            android:layout_marginTop="@dimen/_17pxv"
-                            android:layout_weight="0.33"
-                            android:layout_width="0dp"
+                            android:layout_marginTop="@dimen/_14pxv"
+                            android:layout_width="wrap_content"
                             android:singleLine="true"
                             android:text="@{chatAbrigoUsuRioVM.chatAbrigoUsuRioModel.txtTimeTwo}"
                             style="@style/txtInterregular10_1" tools:text="@string/lbl_11_31_am"/>
@@ -245,37 +243,20 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/_18pxv"
                 android:layout_marginTop="@dimen/_18pxv"
+                android:layout_marginHorizontal="@dimen/_16pxh"
                 android:layout_width="match_parent" android:orientation="horizontal">
-                <LinearLayout android:id="@+id/linearRowiconemoji"
+                <EditText android:id="@+id/linearRowiconemoji"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.87"
+                    android:layout_marginEnd="@dimen/_12pxh"
                     android:layout_width="0dp"
-                    android:orientation="horizontal" style="@style/groupStylebluegray_1">
-                    <ImageView android:id="@+id/imageIconemoji"
-                        android:layout_gravity="center"
-                        android:layout_height="@dimen/_27pxh"
-                        android:layout_marginBottom="@dimen/_6pxv"
-                        android:layout_marginStart="@dimen/_10pxh"
-                        android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_width="@dimen/_27pxh"
-                        android:scaleType="centerCrop"
-                        circular="@{true}"
-                        imageRes="@{@drawable/img_iconemoji}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_iconemoji"/>
-                    <TextView android:ellipsize="end"
-                        android:gravity="center_horizontal"
-                        android:id="@+id/txtMensagem"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_10pxv"
-                        android:layout_marginEnd="@dimen/_2pxh"
-                        android:layout_marginStart="@dimen/_2pxh"
-                        android:layout_marginTop="@dimen/_12pxv"
-                        android:layout_weight="0.73"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text="@{chatAbrigoUsuRioVM.chatAbrigoUsuRioModel.txtMensagem}"
-                        style="@style/txtInterregular14_1" tools:text="@string/lbl_mensagem"/>
-                </LinearLayout>
+                    android:padding="@dimen/_10pxh"
+                    android:orientation="horizontal" style="@style/groupStylebluegray_1"
+                    android:text="@{chatAbrigoUsuRioVM.chatAbrigoUsuRioModel.txtMensagem}"
+                    android:hint="Mensagem"
+                    android:drawablePadding="@dimen/_10pxh"
+                    android:drawableStart="@drawable/emoji_smile">
+                </EditText>
                 <FrameLayout android:id="@+id/frameStacksend"
                     android:layout_height="@dimen/_40pxv"
                     android:layout_width="@dimen/_40pxh" style="@style/groupStyleamber_1">

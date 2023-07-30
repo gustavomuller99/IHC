@@ -19,6 +19,9 @@ class MaisDetalhesUsuRioBottomsheet :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageArrowdown.setOnClickListener {
+      dismiss()
+    }
   }
 
   companion object {

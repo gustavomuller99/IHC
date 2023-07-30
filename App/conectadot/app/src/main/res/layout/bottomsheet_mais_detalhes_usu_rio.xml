@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_32pxh"
                 android:layout_marginStart="@dimen/_32pxh"
-                android:layout_marginTop="@dimen/_41pxv"
+                android:layout_marginTop="@dimen/_20pxv"
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{maisDetalhesUsuRioVM.maisDetalhesUsuRioModel.txtNomeKyuubi}"
@@ -126,6 +126,7 @@
                 android:layout_marginStart="@dimen/_32pxh"
                 android:layout_marginTop="@dimen/_5pxv"
                 android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_2pxh"
                 android:text="@{maisDetalhesUsuRioVM.maisDetalhesUsuRioModel.txtInformaesadi}"
                 style="@style/txtInterbold13" tools:text="@string/msg_informa_es_adi"/>
         </LinearLayout>

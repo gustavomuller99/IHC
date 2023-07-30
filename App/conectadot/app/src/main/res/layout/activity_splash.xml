@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_13pxv"
                 android:layout_marginStart="@dimen/_100pxh"
-                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_marginTop="@dimen/_13pxv"
                 android:layout_weight="0.9" android:layout_width="0dp"
                 android:singleLine="true"
                 android:text="@{splashVM.splashModel.txtComeeagora}"

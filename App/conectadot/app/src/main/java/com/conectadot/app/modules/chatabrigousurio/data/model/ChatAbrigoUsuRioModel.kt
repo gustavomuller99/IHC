@@ -39,7 +39,7 @@ data class ChatAbrigoUsuRioModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtMensagem: String? = MyApp.getInstance().resources.getString(R.string.lbl_mensagem)
+  var txtMensagem: String? = ""
   ,
   /**
    * TODO Replace with dynamic value

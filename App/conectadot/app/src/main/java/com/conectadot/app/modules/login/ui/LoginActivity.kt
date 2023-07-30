@@ -50,7 +50,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     super.onCreate(savedInstanceState)
 
     binding.btnEntrarOne.setOnClickListener(View.OnClickListener {
-      if(binding.etEmail.text.toString() == "user@domain.com" && binding.etPassword.text.toString() == "1234"){
+      if(binding.etEmail.text.toString() == "" && binding.etPassword.text.toString() == ""){
         val intent = Intent(this, TelaPrincipalUsuRioActivity()::class.java)
         startActivity(intent)
         }
