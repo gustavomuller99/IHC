@@ -10,21 +10,21 @@ import com.conectadot.app.modules.splash.data.viewmodel.SplashVM
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_splash) {
 
-  private val viewModel: SplashVM by viewModels()
+    private val viewModel: SplashVM by viewModels()
 
-  override fun onInitialized() {
-    viewModel.navArguments = intent.extras?.getBundle("bundle")
-    binding.splashVM = viewModel
-  }
-
-  override fun setUpClicks() {
-    binding.linearRowcomeeagora.setOnClickListener {
-      val intent = Intent(this, LoginActivity()::class.java)
-      startActivity(intent)
+    override fun onInitialized() {
+        viewModel.navArguments = intent.extras?.getBundle("bundle")
+        binding.splashVM = viewModel
     }
-  }
 
-  companion object {
-      const val TAG: String = "SPLASH_ACTIVITY"
-  }
+    override fun setUpClicks() {
+        binding.linearRowcomeeagora.setOnClickListener {
+            val intent = Intent(this, LoginActivity()::class.java)
+            startActivity(intent)
+        }
+    }
+
+    companion object {
+        const val TAG: String = "SPLASH_ACTIVITY"
+    }
 }

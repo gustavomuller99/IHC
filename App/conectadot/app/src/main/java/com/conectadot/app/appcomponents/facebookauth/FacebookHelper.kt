@@ -9,11 +9,11 @@ import org.json.JSONObject
 
 class FacebookHelper() {
 
-    /** This method will be used to login
+    /** This method will be used to loginResult
      *  @param callbackManager
      *  @param handleResult FacebookCallback of LoginResult
      *  How to use:
-     *  [Class_Object].login(callbackManager,object:FacebookCallback<LoginResult> { methods to implement })
+     *  [Class_Object].loginResult(callbackManager,object:FacebookCallback<LoginResult> { methods to implement })
      * */
     fun login(callbackManager: CallbackManager,handleResult: FacebookCallback<LoginResult>) {
         LoginManager.getInstance().registerCallback(callbackManager, handleResult)
