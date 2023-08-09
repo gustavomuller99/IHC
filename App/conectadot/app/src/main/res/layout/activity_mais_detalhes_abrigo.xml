@@ -136,15 +136,6 @@
                     android:singleLine="true"
                     android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtStatusvacina}"
                     style="@style/txtIntersemibold13_1" tools:text="@string/msg_status_vacina"/>
-                <TextView android:gravity="start"
-                    android:id="@+id/txtInformaesadi"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_32pxh"
-                    android:layout_marginStart="@dimen/_32pxh"
-                    android:layout_marginTop="@dimen/_5pxv"
-                    android:layout_width="match_parent"
-                    android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtInformaesadi}"
-                    style="@style/txtIntersemibold13_1" tools:text="@string/msg_informa_es_adi"/>
             </LinearLayout>
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton

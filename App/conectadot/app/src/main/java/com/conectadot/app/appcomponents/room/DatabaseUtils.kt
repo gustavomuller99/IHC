@@ -31,6 +31,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun shelterDao(): ShelterDao
 
+    abstract fun animalDao(): AnimalDao
+
     companion object {
         private var instance: AppDatabase? = null
 
