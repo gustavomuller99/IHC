@@ -15,13 +15,22 @@ class LoginVM : ViewModel(), KoinComponent {
     val loginModel: MutableLiveData<LoginModel> = MutableLiveData(LoginModel())
     var navArguments: Bundle? = null
 
-    val loginResult: MutableLiveData<Boolean?> = MutableLiveData(null)
+    val loginUser: MutableLiveData<Boolean?> = MutableLiveData(null)
+    val loginShelter: MutableLiveData<Boolean?> = MutableLiveData(null)
 
     fun loginUser(context: Context, email: String, password: String) {
         CoroutineScope(Dispatchers.Default).launch {
             if (DatabaseUtils.loginUser(context, email, password)) {
-                loginResult.postValue(true)
-            } else loginResult.postValue(false)
+                loginUser.postValue(true)
+            } else loginUser.postValue(false)
+        }
+    }
+
+    fun loginShelter(context: Context, email: String, password: String) {
+        CoroutineScope(Dispatchers.Default).launch {
+            if (DatabaseUtils.loginShelter(context, email, password)) {
+                loginShelter.postValue(true)
+            } else loginShelter.postValue(false)
         }
     }
 }

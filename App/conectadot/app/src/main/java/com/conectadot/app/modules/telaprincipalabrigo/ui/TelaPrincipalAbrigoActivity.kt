@@ -1,5 +1,8 @@
 package com.conectadot.app.modules.telaprincipalabrigo.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.conectadot.app.R
@@ -10,56 +13,64 @@ import com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivi
 import com.conectadot.app.modules.novoeditaranimalabrigo.ui.NovoEditarAnimalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.model.ListrectangleeightRowModel
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.viewmodel.TelaPrincipalAbrigoVM
+import com.conectadot.app.modules.telaprincipalusurio.ui.TelaPrincipalUsuRioActivity
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
 
 class TelaPrincipalAbrigoActivity :
     BaseActivity<ActivityTelaPrincipalAbrigoBinding>(R.layout.activity_tela_principal_abrigo) {
-  private val viewModel: TelaPrincipalAbrigoVM by viewModels<TelaPrincipalAbrigoVM>()
+    private val viewModel: TelaPrincipalAbrigoVM by viewModels<TelaPrincipalAbrigoVM>()
 
-  override fun onInitialized(): Unit {
-    viewModel.navArguments = intent.extras?.getBundle("bundle")
+    override fun onInitialized(): Unit {
+        viewModel.navArguments = intent.extras?.getBundle("bundle")
 
-    val listrectangleeightAdapter = ListrectangleeightAdapter(viewModel.listrectangleeightList.value?:mutableListOf())
+        val listrectangleeightAdapter =
+            ListrectangleeightAdapter(viewModel.listrectangleeightList.value ?: mutableListOf())
 
-    listrectangleeightAdapter.setOnItemClickListener(object : ListrectangleeightAdapter.OnItemClickListener {
-      override fun onItemClick(view:View, position:Int, item : ListrectangleeightRowModel) {
-        onClickRecyclerListrectangleeight(view, position, item)
-      }
-    })
+        listrectangleeightAdapter.setOnItemClickListener(object :
+            ListrectangleeightAdapter.OnItemClickListener {
+            override fun onItemClick(view: View, position: Int, item: ListrectangleeightRowModel) {
+                onClickRecyclerListrectangleeight(view, position, item)
+            }
+        })
 
-    binding.recyclerListrectangleeight.adapter = listrectangleeightAdapter
+        binding.recyclerListrectangleeight.adapter = listrectangleeightAdapter
 
-    viewModel.listrectangleeightList.observe(this) {
-      listrectangleeightAdapter.updateData(it)
+        viewModel.listrectangleeightList.observe(this) {
+            listrectangleeightAdapter.updateData(it)
+        }
+
+        binding.imageIconsaxBoldme.setOnClickListener {
+            startActivity(ListarChatsAbrigoUsuRioActivity.getIntent(this, null))
+            overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
+        }
+
+        binding.floatingBtnFloatingactionbutton.setOnClickListener {
+            startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, null))
+        }
+
+        binding.telaPrincipalAbrigoVM = viewModel
     }
 
-    binding.imageIconsaxBoldme.setOnClickListener {
-      startActivity(ListarChatsAbrigoUsuRioActivity.getIntent(this, null))
-      overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
+    override fun setUpClicks(): Unit {
     }
 
-    binding.floatingBtnFloatingactionbutton.setOnClickListener {
-      startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, null))
+    fun onClickRecyclerListrectangleeight(
+        view: View,
+        position: Int,
+        item: ListrectangleeightRowModel
+    ): Unit {
+        startActivity(MaisDetalhesAbrigoActivity.getIntent(this, null))
     }
 
-    binding.telaPrincipalAbrigoVM = viewModel
-  }
+    companion object {
+        const val TAG: String = "TELA_PRINCIPAL_ABRIGO_ACTIVITY"
 
-  override fun setUpClicks(): Unit {
-  }
-
-  fun onClickRecyclerListrectangleeight(
-    view: View,
-    position: Int,
-    item: ListrectangleeightRowModel
-  ): Unit {
-    startActivity(MaisDetalhesAbrigoActivity.getIntent(this, null))
-  }
-
-  companion object {
-    const val TAG: String = "TELA_PRINCIPAL_ABRIGO_ACTIVITY"
-
-  }
+        fun getIntent(context: Context, bundle: Bundle?): Intent {
+            val destIntent = Intent(context, TelaPrincipalAbrigoActivity::class.java)
+            destIntent.putExtra("bundle", bundle)
+            return destIntent
+        }
+    }
 }

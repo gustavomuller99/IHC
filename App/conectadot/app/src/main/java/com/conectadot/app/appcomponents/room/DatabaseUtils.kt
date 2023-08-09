@@ -4,9 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 object DatabaseUtils {
 
@@ -15,20 +12,24 @@ object DatabaseUtils {
         return users.any { it.email == email && it.password == password }
     }
 
-    fun loginShelter(): Boolean {
-        return false
+    fun loginShelter(context: Context, email: String, password: String): Boolean {
+        val shelters = AppDatabase.getDatabase(context).shelterDao().getAll()
+        return shelters.any { it.email == email && it.password == password }
     }
 
     fun addUser(context: Context, user: User) {
-        CoroutineScope(Dispatchers.Default).launch {
-            AppDatabase.getDatabase(context).userDao().insertAll(user)
-        }
+        AppDatabase.getDatabase(context).userDao().insertAll(user)
+    }
+
+    fun addShelter(context: Context, shelter: Shelter) {
+        AppDatabase.getDatabase(context).shelterDao().insertAll(shelter)
     }
 }
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class, Shelter::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun shelterDao(): ShelterDao
 
     companion object {
         private var instance: AppDatabase? = null

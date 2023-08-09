@@ -11,6 +11,7 @@ import com.conectadot.app.databinding.ActivityLoginBinding
 import com.conectadot.app.modules.criarcontaabrigo.ui.CriarContaAbrigoActivity
 import com.conectadot.app.modules.criarcontausurio.ui.CriarContaUsuRioActivity
 import com.conectadot.app.modules.login.`data`.viewmodel.LoginVM
+import com.conectadot.app.modules.telaprincipalabrigo.ui.TelaPrincipalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalusurio.ui.TelaPrincipalUsuRioActivity
 import com.facebook.CallbackManager
 import kotlin.Int
@@ -44,9 +45,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             viewModel.loginUser(this, email, password)
         }
 
-        viewModel.loginResult.observe(this) {
+        viewModel.loginUser.observe(this) {
             if (it == true) {
                 startActivity(TelaPrincipalUsuRioActivity.getIntent(this, null))
+            } else if (it == false) {
+                val email = binding.etEmail.text.toString()
+                val password = binding.etPassword.text.toString()
+                viewModel.loginShelter(this, email, password)
+            }
+        }
+
+        viewModel.loginShelter.observe(this) {
+            if (it == true) {
+                startActivity(TelaPrincipalAbrigoActivity.getIntent(this, null))
             } else if (it == false) {
                 Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
             }

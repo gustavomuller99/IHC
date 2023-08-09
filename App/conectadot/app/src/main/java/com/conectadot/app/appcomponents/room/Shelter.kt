@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 
 @Entity(indices = [Index(value = ["email"], unique = true)])
-data class User(
+data class Shelter(
     @PrimaryKey(autoGenerate = true) val uid: Int = 0,
     @ColumnInfo(name = "name") val name: String?,
     @ColumnInfo(name = "email") val email: String?,
@@ -21,17 +21,16 @@ data class User(
 )
 
 @Dao
-interface UserDao {
-    @Query("SELECT * FROM user")
-    fun getAll(): List<User>
+interface ShelterDao {
+    @Query("SELECT * FROM shelter")
+    fun getAll(): List<Shelter>
 
-    @Query("SELECT * FROM user WHERE name LIKE :name LIMIT 1")
-    fun findByName(name: String): User
+    @Query("SELECT * FROM shelter WHERE name LIKE :name LIMIT 1")
+    fun findByName(name: String): Shelter
 
     @Insert
-    fun insertAll(vararg users: User)
+    fun insertAll(vararg shelters: Shelter)
 
     @Delete
-    fun delete(user: User)
+    fun delete(shelter: Shelter)
 }
-
