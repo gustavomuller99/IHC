@@ -8,7 +8,6 @@ import com.conectadot.app.R
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityChatAbrigoUsuRioBinding
 import com.conectadot.app.modules.chatabrigousurio.`data`.viewmodel.ChatAbrigoUsuRioVM
-import com.conectadot.app.modules.login.ui.LoginActivity
 import kotlin.String
 import kotlin.Unit
 
@@ -19,6 +18,7 @@ class ChatAbrigoUsuRioActivity :
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.chatAbrigoUsuRioVM = viewModel
+
   }
 
   override fun setUpClicks(): Unit {

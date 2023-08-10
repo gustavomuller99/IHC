@@ -24,6 +24,10 @@ object DatabaseUtils {
     fun addShelter(context: Context, shelter: Shelter) {
         AppDatabase.getDatabase(context).shelterDao().insertAll(shelter)
     }
+
+    fun addMessage(context: Context, message: Message) {
+        AppDatabase.getDatabase(context).messageDao().addMessage(message)
+    }
 }
 
 @Database(entities = [User::class, Shelter::class], version = 1)
@@ -32,6 +36,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun shelterDao(): ShelterDao
 
     abstract fun animalDao(): AnimalDao
+
+    abstract fun messageDao(): MessageDao
 
     companion object {
         private var instance: AppDatabase? = null
