@@ -30,7 +30,7 @@ object DatabaseUtils {
     }
 }
 
-@Database(entities = [User::class, Shelter::class], version = 1)
+@Database(entities = [User::class, Shelter::class, Animal::class, Message::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun shelterDao(): ShelterDao
