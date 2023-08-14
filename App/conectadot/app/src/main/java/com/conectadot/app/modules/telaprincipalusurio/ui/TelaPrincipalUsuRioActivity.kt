@@ -5,10 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.conectadot.app.R
+import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityTelaPrincipalUsuRioBinding
 import com.conectadot.app.modules.chatabrigousurio.ui.ChatAbrigoUsuRioActivity
 import com.conectadot.app.modules.listarchatsabrigousurio.ui.ListarChatsAbrigoUsuRioActivity
+import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 import com.conectadot.app.modules.maisdetalhesusurio.ui.MaisDetalhesUsuRioBottomsheet
 import com.conectadot.app.modules.telaprincipalusurio.`data`.viewmodel.TelaPrincipalUsuRioVM
 import kotlin.String
@@ -41,6 +43,11 @@ class TelaPrincipalUsuRioActivity :
             startActivity(ListarChatsAbrigoUsuRioActivity.getIntent(this, null))
             overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
         }
+    }
+
+    override fun onBackPressed() {
+        SharedPreferences.setLoggedId(LoginResult.Failed.value)
+        super.onBackPressed()
     }
 
     companion object {

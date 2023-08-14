@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.conectadot.app.R
+import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityTelaPrincipalAbrigoBinding
 import com.conectadot.app.modules.listarchatsabrigousurio.ui.ListarChatsAbrigoUsuRioActivity
+import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 import com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivity
 import com.conectadot.app.modules.novoeditaranimalabrigo.ui.NovoEditarAnimalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.model.ListrectangleeightRowModel
@@ -53,7 +55,12 @@ class TelaPrincipalAbrigoActivity :
         binding.telaPrincipalAbrigoVM = viewModel
     }
 
-    override fun setUpClicks(): Unit {
+    override fun setUpClicks() {
+    }
+
+    override fun onBackPressed() {
+        SharedPreferences.setLoggedId(LoginResult.Failed.value)
+        super.onBackPressed()
     }
 
     fun onClickRecyclerListrectangleeight(

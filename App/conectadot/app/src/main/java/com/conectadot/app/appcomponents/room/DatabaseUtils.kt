@@ -4,17 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 
 object DatabaseUtils {
 
-    fun loginUser(context: Context, email: String, password: String): Boolean {
+    fun loginUser(context: Context, email: String, password: String): Int {
         val users = AppDatabase.getDatabase(context).userDao().getAll()
-        return users.any { it.email == email && it.password == password }
+        return users.firstOrNull { it.email == email && it.password == password }?.uid ?: LoginResult.Failed.value
     }
 
-    fun loginShelter(context: Context, email: String, password: String): Boolean {
+    fun loginShelter(context: Context, email: String, password: String): Int {
         val shelters = AppDatabase.getDatabase(context).shelterDao().getAll()
-        return shelters.any { it.email == email && it.password == password }
+        return shelters.firstOrNull { it.email == email && it.password == password }?.uid ?: LoginResult.Failed.value
     }
 
     fun addUser(context: Context, user: User) {
@@ -23,6 +24,10 @@ object DatabaseUtils {
 
     fun addShelter(context: Context, shelter: Shelter) {
         AppDatabase.getDatabase(context).shelterDao().insertAll(shelter)
+    }
+
+    fun addAnimal(context: Context, animal: Animal) {
+        AppDatabase.getDatabase(context).animalDao().insertAll(animal)
     }
 
     fun addMessage(context: Context, message: Message) {

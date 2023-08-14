@@ -11,50 +11,51 @@ import kotlin.Int
 import kotlin.collections.List
 
 class ListrectangleeightAdapter(
-  var list: List<ListrectangleeightRowModel>
+    var list: List<ListrectangleeightRowModel>
 ) : RecyclerView.Adapter<ListrectangleeightAdapter.RowListrectangleeightVH>() {
-  private var clickListener: OnItemClickListener? = null
+    private var clickListener: OnItemClickListener? = null
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowListrectangleeightVH {
-    val
-        view=LayoutInflater.from(parent.context).inflate(R.layout.row_listrectangleeight,parent,false)
-    return RowListrectangleeightVH(view)
-  }
-
-  override fun onBindViewHolder(holder: RowListrectangleeightVH, position: Int) {
-    val listrectangleeightRowModel = ListrectangleeightRowModel()
-    holder.binding.listrectangleeightRowModel = listrectangleeightRowModel
-
-    holder.binding.root.setOnClickListener {
-      clickListener?.onItemClick(holder.binding.root, position, listrectangleeightRowModel)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowListrectangleeightVH {
+        val
+            view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.row_listrectangleeight, parent, false)
+        return RowListrectangleeightVH(view)
     }
-  }
 
-  override fun getItemCount(): Int = 3
-  // TODO uncomment following line after integration with data source
-  // return list.size
+    override fun onBindViewHolder(holder: RowListrectangleeightVH, position: Int) {
+        val listrectangleeightRowModel = ListrectangleeightRowModel()
+        holder.binding.listrectangleeightRowModel = listrectangleeightRowModel
 
-  public fun updateData(newData: List<ListrectangleeightRowModel>) {
-    list = newData
-    notifyDataSetChanged()
-  }
-
-  fun setOnItemClickListener(clickListener: OnItemClickListener) {
-    this.clickListener = clickListener
-  }
-
-  interface OnItemClickListener {
-    fun onItemClick(
-      view: View,
-      position: Int,
-      item: ListrectangleeightRowModel
-    ) {
+        holder.binding.root.setOnClickListener {
+            clickListener?.onItemClick(holder.binding.root, position, listrectangleeightRowModel)
+        }
     }
-  }
 
-  inner class RowListrectangleeightVH(
-    view: View
-  ) : RecyclerView.ViewHolder(view) {
-    val binding: RowListrectangleeightBinding = RowListrectangleeightBinding.bind(itemView)
-  }
+    override fun getItemCount(): Int = 3
+    // TODO uncomment following line after integration with data source
+    // return list.size
+
+    public fun updateData(newData: List<ListrectangleeightRowModel>) {
+        list = newData
+        notifyDataSetChanged()
+    }
+
+    fun setOnItemClickListener(clickListener: OnItemClickListener) {
+        this.clickListener = clickListener
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(
+            view: View,
+            position: Int,
+            item: ListrectangleeightRowModel
+        ) {
+        }
+    }
+
+    inner class RowListrectangleeightVH(
+        view: View
+    ) : RecyclerView.ViewHolder(view) {
+        val binding: RowListrectangleeightBinding = RowListrectangleeightBinding.bind(itemView)
+    }
 }

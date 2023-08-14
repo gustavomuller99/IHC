@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.conectadot.app.R
+import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
+import com.conectadot.app.appcomponents.room.Animal
 import com.conectadot.app.databinding.ActivityNovoEditarAnimalAbrigoBinding
 import com.conectadot.app.modules.login.ui.LoginActivity
 import com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivity
@@ -16,82 +18,84 @@ import kotlin.String
 import kotlin.Unit
 
 class NovoEditarAnimalAbrigoActivity :
-    BaseActivity<ActivityNovoEditarAnimalAbrigoBinding>(R.layout.activity_novo_editar_animal_abrigo)
-    {
-  private val viewModel: NovoEditarAnimalAbrigoVM by viewModels<NovoEditarAnimalAbrigoVM>()
+    BaseActivity<ActivityNovoEditarAnimalAbrigoBinding>(R.layout.activity_novo_editar_animal_abrigo) {
+    private val viewModel: NovoEditarAnimalAbrigoVM by viewModels()
 
-  override fun onInitialized(): Unit {
-    viewModel.navArguments = intent.extras?.getBundle("bundle")
-    binding.novoEditarAnimalAbrigoVM = viewModel
-  }
-      override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onInitialized(): Unit {
+        viewModel.navArguments = intent.extras?.getBundle("bundle")
+        binding.novoEditarAnimalAbrigoVM = viewModel
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var portestr: String
-        portestr = ""
         binding.btnConfirm.setOnClickListener {
-          if(binding.txtAnimalName.text.isNotEmpty()){
-            if(binding.txtAnimalSpecies.text.isNotEmpty()){
-              if(binding.txtAnimalSpecies.text.toString().uppercase() == "CACHORRO" || binding.txtAnimalSpecies.text.toString().uppercase() == "GATO"){
-                if(binding.txtAnimalRace.text.isNotEmpty()){
-                  if(binding.txtAnimalAge.text.isNotEmpty()){
-                    if(binding.txtDetailsC.text.isNotEmpty() && binding.txtDetailsV.text.isNotEmpty()){
-                      if(binding.rbPequeno.isChecked || binding.rbMdio.isChecked || binding.rbGrande.isChecked){
-                        if(binding.rbPequeno.isChecked){
-                          portestr = "Pequeno"
-                        }
-                        else if(binding.rbMdio.isChecked){
-                          portestr = "Medio"
-                        }
-                        else if(binding.rbGrande.isChecked){
-                          portestr = "Grande"
-                        }
-                        startActivity(TelaPrincipalAbrigoActivity.getIntent(this, null))
-                      }else{
-                        Toast.makeText(this, "Informe o porte do animal.", Toast.LENGTH_SHORT)
-                          .show()
-                      }
-                    }else{
-                      Toast.makeText(this, "Informe detalhes de castração e vacina.", Toast.LENGTH_SHORT)
-                        .show()
-                    }
-                  }else{
-                    Toast.makeText(this, "Informe a idade do animal.", Toast.LENGTH_SHORT)
-                      .show()
-                  }
-                }else{
-                  Toast.makeText(this, "Informe a raça do animal.", Toast.LENGTH_SHORT)
-                    .show()
-                }
-              }else{
-                Toast.makeText(this, "Espécie deve ser cachorro ou gato.", Toast.LENGTH_SHORT)
-                  .show()
-              }
-            }else{
-              Toast.makeText(this, "Informe a espécie do animal.", Toast.LENGTH_SHORT)
-                .show()
+
+            if (binding.txtAnimalName.text.isEmpty()) {
+                showToast("Informe o nome do animal.")
             }
-          }else{
-            Toast.makeText(this, "Informe o nome do animal.", Toast.LENGTH_SHORT)
-              .show()
-          }
+
+            if (binding.txtAnimalSpecies.text.isEmpty()) {
+                showToast("Informe a espécie do animal.")
+            }
+
+            if (binding.txtAnimalRace.text.isEmpty()) {
+                showToast("Informe a raça do animal.")
+            }
+
+            if (binding.txtAnimalAge.text.isEmpty()) {
+                showToast("Informe a idade do animal.")
+            }
+
+            if (binding.txtDetailsC.text.isEmpty() || binding.txtDetailsV.text.isEmpty()) {
+                showToast("Informe detalhes de castração e vacina.")
+            }
+
+            if (!binding.rbPequeno.isChecked && !binding.rbMdio.isChecked && !binding.rbGrande.isChecked) {
+                showToast("Informe o porte do animal.")
+            }
+
+            val porte = when {
+                binding.rbPequeno.isChecked -> "pequeno"
+                binding.rbMdio.isChecked -> "medio"
+                else -> "grande"
+            }
+
+            viewModel.addAnimal(this,
+                Animal(
+                    name = binding.txtAnimalName.text.toString(),
+                    species = binding.txtAnimalSpecies.text.toString(),
+                    race = binding.txtAnimalRace.text.toString(),
+                    age = binding.txtAnimalAge.text.toString(),
+                    size = porte,
+                    detailsc = binding.txtDetailsC.text.toString(),
+                    detailsv = binding.txtDetailsV.text.toString(),
+                    shelter = SharedPreferences.getLoggedId()
+                )
+            )
+
+            startActivity(TelaPrincipalAbrigoActivity.getIntent(this, null))
         }
-      }
-
-
-        override fun setUpClicks(): Unit {
-    binding.imageArrowleft.setOnClickListener {
-      finish()
     }
-  }
 
-  companion object {
-    const val TAG: String = "NOVO_EDITAR_ANIMAL_ABRIGO_ACTIVITY"
-
-    fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, NovoEditarAnimalAbrigoActivity::class.java)
-      destIntent.putExtra("bundle", bundle)
-      return destIntent
+    override fun setUpClicks() {
+        binding.imageArrowleft.setOnClickListener {
+            finish()
+        }
     }
-  }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT)
+            .show()
+    }
+
+    companion object {
+        const val TAG: String = "NOVO_EDITAR_ANIMAL_ABRIGO_ACTIVITY"
+
+        fun getIntent(context: Context, bundle: Bundle?): Intent {
+            val destIntent = Intent(context, NovoEditarAnimalAbrigoActivity::class.java)
+            destIntent.putExtra("bundle", bundle)
+            return destIntent
+        }
+    }
 }

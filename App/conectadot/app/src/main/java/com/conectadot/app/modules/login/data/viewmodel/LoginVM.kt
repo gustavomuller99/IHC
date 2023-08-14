@@ -15,22 +15,27 @@ class LoginVM : ViewModel(), KoinComponent {
     val loginModel: MutableLiveData<LoginModel> = MutableLiveData(LoginModel())
     var navArguments: Bundle? = null
 
-    val loginUser: MutableLiveData<Boolean?> = MutableLiveData(null)
-    val loginShelter: MutableLiveData<Boolean?> = MutableLiveData(null)
+    val loginUser: MutableLiveData<Int> = MutableLiveData(LoginResult.NotTried.value)
+    val loginShelter: MutableLiveData<Int> = MutableLiveData(LoginResult.NotTried.value)
 
     fun loginUser(context: Context, email: String, password: String) {
         CoroutineScope(Dispatchers.Default).launch {
-            if (DatabaseUtils.loginUser(context, email, password)) {
-                loginUser.postValue(true)
-            } else loginUser.postValue(false)
+            DatabaseUtils.loginUser(context, email, password).let {
+                loginUser.postValue(it)
+            }
         }
     }
 
     fun loginShelter(context: Context, email: String, password: String) {
         CoroutineScope(Dispatchers.Default).launch {
-            if (DatabaseUtils.loginShelter(context, email, password)) {
-                loginShelter.postValue(true)
-            } else loginShelter.postValue(false)
+            DatabaseUtils.loginShelter(context, email, password).let {
+                loginShelter.postValue(it)
+            }
         }
     }
+}
+
+enum class LoginResult(val value: Int) {
+    Failed(-1),
+    NotTried(-2);
 }

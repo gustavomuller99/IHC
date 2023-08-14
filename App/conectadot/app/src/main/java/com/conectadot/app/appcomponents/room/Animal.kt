@@ -19,7 +19,7 @@ data class Animal(
     @ColumnInfo(name = "size") val size: String?,
     @ColumnInfo(name = "detailsc") val detailsc: String?,
     @ColumnInfo(name = "detailsv") val detailsv: String?,
-    @ColumnInfo(name = "shelter") val shelter: String?
+    @ColumnInfo(name = "shelter") val shelter: Int?
     )
 
 @Dao

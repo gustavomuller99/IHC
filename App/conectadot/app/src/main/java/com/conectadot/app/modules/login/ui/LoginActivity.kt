@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.conectadot.app.R
+import com.conectadot.app.appcomponents.LoggedType
+import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityLoginBinding
 import com.conectadot.app.modules.criarcontaabrigo.ui.CriarContaAbrigoActivity
 import com.conectadot.app.modules.criarcontausurio.ui.CriarContaUsuRioActivity
+import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 import com.conectadot.app.modules.login.`data`.viewmodel.LoginVM
 import com.conectadot.app.modules.telaprincipalabrigo.ui.TelaPrincipalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalusurio.ui.TelaPrincipalUsuRioActivity
@@ -46,9 +49,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
 
         viewModel.loginUser.observe(this) {
-            if (it == true) {
+            if (it != LoginResult.Failed.value && it != LoginResult.NotTried.value) {
+                SharedPreferences.setLoggedId(it)
+                SharedPreferences.setLoggedType(LoggedType.User)
                 startActivity(TelaPrincipalUsuRioActivity.getIntent(this, null))
-            } else if (it == false) {
+            } else if (it == LoginResult.Failed.value ) {
                 val email = binding.etEmail.text.toString()
                 val password = binding.etPassword.text.toString()
                 viewModel.loginShelter(this, email, password)
@@ -56,9 +61,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
 
         viewModel.loginShelter.observe(this) {
-            if (it == true) {
+            if (it != LoginResult.Failed.value && it != LoginResult.NotTried.value) {
+                SharedPreferences.setLoggedId(it)
+                SharedPreferences.setLoggedType(LoggedType.Shelter)
                 startActivity(TelaPrincipalAbrigoActivity.getIntent(this, null))
-            } else if (it == false) {
+            } else if (it == LoginResult.Failed.value) {
                 Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
             }
         }
