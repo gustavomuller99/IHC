@@ -22,14 +22,13 @@ import kotlin.Unit
 
 class TelaPrincipalAbrigoActivity :
     BaseActivity<ActivityTelaPrincipalAbrigoBinding>(R.layout.activity_tela_principal_abrigo) {
-    private val viewModel: TelaPrincipalAbrigoVM by viewModels<TelaPrincipalAbrigoVM>()
+    private val viewModel: TelaPrincipalAbrigoVM by viewModels()
 
-    override fun onInitialized(): Unit {
+    override fun onInitialized() {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
+        viewModel.updateAnimalList(this)
 
-        val listrectangleeightAdapter =
-            ListrectangleeightAdapter(viewModel.listrectangleeightList.value ?: mutableListOf())
-
+        val listrectangleeightAdapter = ListrectangleeightAdapter(viewModel.listrectangleeightList.value ?: mutableListOf())
         listrectangleeightAdapter.setOnItemClickListener(object :
             ListrectangleeightAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int, item: ListrectangleeightRowModel) {
@@ -40,7 +39,14 @@ class TelaPrincipalAbrigoActivity :
         binding.recyclerListrectangleeight.adapter = listrectangleeightAdapter
 
         viewModel.listrectangleeightList.observe(this) {
-            listrectangleeightAdapter.updateData(it)
+            if (it.isEmpty()) {
+                binding.listEmpty.visibility = View.VISIBLE
+                binding.recyclerListrectangleeight.visibility = View.GONE
+            } else {
+                binding.listEmpty.visibility = View.GONE
+                binding.recyclerListrectangleeight.visibility = View.VISIBLE
+                listrectangleeightAdapter.updateData(it)
+            }
         }
 
         binding.imageIconsaxBoldme.setOnClickListener {
@@ -61,6 +67,11 @@ class TelaPrincipalAbrigoActivity :
     override fun onBackPressed() {
         SharedPreferences.setLoggedId(LoginResult.Failed.value)
         super.onBackPressed()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.updateAnimalList(this)
     }
 
     fun onClickRecyclerListrectangleeight(

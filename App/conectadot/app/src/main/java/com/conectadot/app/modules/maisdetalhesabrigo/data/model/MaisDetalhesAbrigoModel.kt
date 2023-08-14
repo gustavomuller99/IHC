@@ -8,7 +8,7 @@ data class MaisDetalhesAbrigoModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtNomeKyuubi: String? = MyApp.getInstance().resources.getString(R.string.lbl_nome_kyuubi2)
+  var txtNomeKyuubi: String? = MyApp.getInstance().resources.getString(R.string.lbl_nome)
   ,
   /**
    * TODO Replace with dynamic value
@@ -19,7 +19,7 @@ data class MaisDetalhesAbrigoModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtRaaLuludaP: String? = MyApp.getInstance().resources.getString(R.string.msg_ra_a_lulu_da_p)
+  var txtRaaLuludaP: String? = MyApp.getInstance().resources.getString(R.string.lbl_race)
   ,
   /**
    * TODO Replace with dynamic value

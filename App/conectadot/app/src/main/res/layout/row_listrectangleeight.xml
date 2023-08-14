@@ -30,16 +30,16 @@
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:layout_width="match_parent"
                 android:singleLine="true"
-                android:text="@{listrectangleeightRowModel.txtNomeKyuubi}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome_kyuubi2"/>
+                android:text="@{listrectangleeightRowModel.txtNome}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome"/>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtRaaLuludaP"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2pxv"
                 android:layout_width="match_parent"
                 android:singleLine="true"
-                android:text="@{listrectangleeightRowModel.txtRaaLuludaP}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/msg_ra_a_lulu_da_p"/>
+                android:text="@{listrectangleeightRowModel.txtRace}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_race"/>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtPortePequeno"
                 android:layout_height="wrap_content"
@@ -47,8 +47,8 @@
                 android:layout_marginTop="@dimen/_2pxv"
                 android:layout_width="match_parent"
                 android:singleLine="true"
-                android:text="@{listrectangleeightRowModel.txtPortePequeno}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_porte_pequeno"/>
+                android:text="@{listrectangleeightRowModel.txtPorte}"
+                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_porte"/>
         </LinearLayout>
     </LinearLayout>
 </layout>

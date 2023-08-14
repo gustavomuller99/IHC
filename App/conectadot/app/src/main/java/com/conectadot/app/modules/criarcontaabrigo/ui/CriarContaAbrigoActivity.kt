@@ -48,7 +48,7 @@ class CriarContaAbrigoActivity :
                             )
                         )
 
-                        startActivity(LoginActivity.getIntent(this, null))
+                        finish()
                     } else {
                         Toast.makeText(
                             this,

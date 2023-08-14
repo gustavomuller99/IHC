@@ -23,17 +23,14 @@ class ListrectangleeightAdapter(
     }
 
     override fun onBindViewHolder(holder: RowListrectangleeightVH, position: Int) {
-        val listrectangleeightRowModel = ListrectangleeightRowModel()
-        holder.binding.listrectangleeightRowModel = listrectangleeightRowModel
+        holder.binding.listrectangleeightRowModel = list[position]
 
         holder.binding.root.setOnClickListener {
-            clickListener?.onItemClick(holder.binding.root, position, listrectangleeightRowModel)
+            clickListener?.onItemClick(holder.binding.root, position, list[position])
         }
     }
 
-    override fun getItemCount(): Int = 3
-    // TODO uncomment following line after integration with data source
-    // return list.size
+    override fun getItemCount(): Int = list.size
 
     public fun updateData(newData: List<ListrectangleeightRowModel>) {
         list = newData

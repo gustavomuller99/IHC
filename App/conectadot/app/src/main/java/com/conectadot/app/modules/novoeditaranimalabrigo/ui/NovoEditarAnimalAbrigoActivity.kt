@@ -21,7 +21,7 @@ class NovoEditarAnimalAbrigoActivity :
     BaseActivity<ActivityNovoEditarAnimalAbrigoBinding>(R.layout.activity_novo_editar_animal_abrigo) {
     private val viewModel: NovoEditarAnimalAbrigoVM by viewModels()
 
-    override fun onInitialized(): Unit {
+    override fun onInitialized() {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         binding.novoEditarAnimalAbrigoVM = viewModel
     }
@@ -33,26 +33,32 @@ class NovoEditarAnimalAbrigoActivity :
 
             if (binding.txtAnimalName.text.isEmpty()) {
                 showToast("Informe o nome do animal.")
+                return@setOnClickListener
             }
 
             if (binding.txtAnimalSpecies.text.isEmpty()) {
                 showToast("Informe a espécie do animal.")
+                return@setOnClickListener
             }
 
             if (binding.txtAnimalRace.text.isEmpty()) {
                 showToast("Informe a raça do animal.")
+                return@setOnClickListener
             }
 
             if (binding.txtAnimalAge.text.isEmpty()) {
                 showToast("Informe a idade do animal.")
+                return@setOnClickListener
             }
 
             if (binding.txtDetailsC.text.isEmpty() || binding.txtDetailsV.text.isEmpty()) {
                 showToast("Informe detalhes de castração e vacina.")
+                return@setOnClickListener
             }
 
             if (!binding.rbPequeno.isChecked && !binding.rbMdio.isChecked && !binding.rbGrande.isChecked) {
                 showToast("Informe o porte do animal.")
+                return@setOnClickListener
             }
 
             val porte = when {
@@ -74,7 +80,7 @@ class NovoEditarAnimalAbrigoActivity :
                 )
             )
 
-            startActivity(TelaPrincipalAbrigoActivity.getIntent(this, null))
+            finish()
         }
     }
 

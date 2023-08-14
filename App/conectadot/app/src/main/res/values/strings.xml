@@ -4,12 +4,11 @@
     <string name="loading">Loading?</string>
     <string name="no_internet_connection">No internet connection!</string>
     <!--TODO ENTER YOUR APP ID BELOW-->
-    <string name="facebook_app_id"/>
+    <string name="facebook_app_id" />
     <!--TODO ENTER YOUR APP ID BELOW (eg: fb0123456789)-->
     <string name="fb_login_protocol_scheme">fb</string>
     <!--TODO ENTER YOUR Client Token BELOW-->
-    <string name="facebook_client_token"/>
-<string name="lbl_porte_pequeno">Porte: Pequeno</string>
+    <string name="facebook_client_token" />
 <string name="lbl_cachorro"> Cachorro</string>
 <string name="msg_junte_se_plat">Junte-se à plataforma</string>
 <string name="lbl_porte_m_dio">Porte: Médio</string>
@@ -26,7 +25,9 @@
 <string name="lbl_nome_morgana">Nome: Morgana</string>
 <string name="lbl_cadastrar">Cadastrar</string>
 <string name="lbl_abrigo">Abrigo: </string>
-<string name="lbl_porte">Porte:</string>
+<string name="lbl_porte">Porte: </string>
+<string name="listEmptyAnimal">Adicione um animal para ele aparecer aqui</string>
+<string name="lbl_porte_pequeno">Porte Pequeno</string>
 <string name="lbl_kyuubi2"> Kyuubi</string>
 <string name="lbl_nome_kyuubi">Nome: Kyuubi </string>
 <string name="lbl_5_0_km">5.0 km</string>
@@ -39,7 +40,6 @@
 <string name="msg_n_o_possui_cont">Não possui conta? Cadastre-se</string>
 <string name="lbl_srd"> SRD</string>
 <string name="lbl_castrado"> Castrado</string>
-<string name="lbl_nome_kyuubi2">Nome: Kyuubi</string>
 <string name="msg_informa_es_adi">Informações adicionais: Sem informações adicionais</string>
 <string name="lbl_idade_10_meses">Idade: 10 meses</string>
 <string name="lbl_come_e_agora">Começe agora</string>
@@ -59,7 +59,7 @@
 <string name="lbl_confirmar_senha">Confirmar senha</string>
 <string name="msg_status_castra">Status castração: Castrado</string>
 <string name="lbl_2">2</string>
-<string name="msg_ra_a_lulu_da_p">Raça: Lulu da Pomerânia</string>
+<string name="lbl_race">Raça: </string>
 <string name="msg_la_ador_abrigo">Laçador Abrigo de Animais</string>
 <string name="lbl_criar_conta">Criar conta</string>
 <string name="lbl_cidade">Cidade</string>

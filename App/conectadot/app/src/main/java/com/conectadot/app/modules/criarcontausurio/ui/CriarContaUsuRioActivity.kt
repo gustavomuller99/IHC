@@ -55,7 +55,7 @@ class CriarContaUsuRioActivity :
                             )
                         )
 
-                        startActivity(LoginActivity.getIntent(this, null))
+                        finish()
                     } else {
                         Toast.makeText(this, "Informe dados de localização", Toast.LENGTH_SHORT)
                             .show()
