@@ -1,14 +1,21 @@
 package com.conectadot.app.modules.telaprincipalabrigo.ui
 
+import android.graphics.ImageDecoder
+import android.net.Uri
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.conectadot.app.R
 import com.conectadot.app.databinding.RowListrectangleeightBinding
-import com.conectadot.app.modules.telaprincipalabrigo.`data`.model.ListrectangleeightRowModel
-import kotlin.Int
-import kotlin.collections.List
+import com.conectadot.app.modules.telaprincipalabrigo.data.model.ListrectangleeightRowModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.io.File
+import java.net.URI
+
 
 class ListrectangleeightAdapter(
     var list: List<ListrectangleeightRowModel>
@@ -27,6 +34,24 @@ class ListrectangleeightAdapter(
 
         holder.binding.root.setOnClickListener {
             clickListener?.onItemClick(holder.binding.root, position, list[position])
+        }
+
+        CoroutineScope(Dispatchers.Main).launch {
+            list[position].image?.let {
+                Uri.parse(it)?.let { uri ->
+                    val bitmap = ImageDecoder.decodeBitmap(
+                        ImageDecoder.createSource(
+                            holder.binding.root.context.contentResolver,
+                            uri
+                        )
+                    )
+                    holder.binding.imageRectangleEight.setImageBitmap(bitmap)
+                }
+            } ?: holder.binding.imageRectangleEight.setImageDrawable(
+                holder.binding.root.context.getDrawable(
+                    R.drawable.dog
+                )
+            )
         }
     }
 

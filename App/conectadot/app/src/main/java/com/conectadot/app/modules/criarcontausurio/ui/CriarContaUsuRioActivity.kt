@@ -44,9 +44,8 @@ class CriarContaUsuRioActivity :
                     binding.etUserConfPassword.setTextColor(Color.BLACK)
                     if (binding.etUserAddress.text.isNotEmpty() && binding.etUserState.text.isNotEmpty() && binding.etUserCity.text.isNotEmpty()) {
 
-
                         viewModel.addUser(this, User(
-                                name = "",
+                                name = binding.etName.text.toString(),
                                 email = binding.etUserEmail.text.toString(),
                                 password = binding.etUserPassword.text.toString(),
                                 address = binding.etUserAddress.text.toString(),

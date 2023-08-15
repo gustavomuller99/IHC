@@ -29,7 +29,8 @@ class TelaPrincipalAbrigoVM : ViewModel(), KoinComponent {
                     ListrectangleeightRowModel(
                         txtNome = (MyApp.getInstance().resources.getString(R.string.lbl_nome) + " " + it.name),
                         txtRace = (MyApp.getInstance().resources.getString(R.string.lbl_race) + " " + it.race),
-                        txtPorte = (MyApp.getInstance().resources.getString(R.string.lbl_porte) + " " + it.size)
+                        txtPorte = (MyApp.getInstance().resources.getString(R.string.lbl_porte) + " " + it.size),
+                        image = it.image
                     )
                 }.toMutableList()
             )

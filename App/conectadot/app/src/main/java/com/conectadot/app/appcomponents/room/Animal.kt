@@ -1,5 +1,6 @@
 package com.conectadot.app.appcomponents.room
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Delete
@@ -19,7 +20,8 @@ data class Animal(
     @ColumnInfo(name = "size") val size: String?,
     @ColumnInfo(name = "detailsc") val detailsc: String?,
     @ColumnInfo(name = "detailsv") val detailsv: String?,
-    @ColumnInfo(name = "shelter") val shelter: Int?
+    @ColumnInfo(name = "shelter") val shelter: Int?,
+    @ColumnInfo(name = "image") val image: String?
     )
 
 @Dao

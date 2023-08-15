@@ -13,9 +13,9 @@
             android:layout_marginStart="@dimen/_9pxh"
             android:layout_marginTop="@dimen/_9pxv"
             android:layout_width="@dimen/_60pxh"
-            android:scaleType="fitXY" cornerRadius="@{@dimen/_16pxh}"
-            imageRes="@{@drawable/img_rectangle8}"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_rectangle8"/>
+            android:scaleType="fitXY"
+            cornerRadius="@{@dimen/_16pxh}"
+            android:src="@drawable/dog" />
         <LinearLayout android:gravity="start"
             android:id="@+id/linearColumnnomekyuubi"
             android:layout_height="wrap_content"

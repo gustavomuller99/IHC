@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest package="com.conectadot.app" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    package="com.conectadot.app" xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <application android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name" android:largeHeap="true"
@@ -24,11 +29,7 @@
         <activity
             android:name="com.conectadot.app.modules.novoeditaranimalabrigo.ui.NovoEditarAnimalAbrigoActivity" android:screenOrientation="portrait"/>
         <activity
-            android:name="com.conectadot.app.modules.chatabrigousurio.ui.ChatAbrigoUsuRioActivity" android:screenOrientation="portrait"/>
-        <activity
             android:name="com.conectadot.app.modules.telaprincipalabrigo.ui.TelaPrincipalAbrigoActivity" android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.conectadot.app.modules.listarchatsabrigousurio.ui.ListarChatsAbrigoUsuRioActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.conectadot.app.modules.criarcontaabrigo.ui.CriarContaAbrigoActivity" android:screenOrientation="portrait"/>
         <activity
