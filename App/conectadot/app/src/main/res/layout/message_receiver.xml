@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/groupStyledeep_purple_A100cornerRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivFirst"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/firstName"
+            style="@style/txtIntersemibold12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4pxh"
+            android:layout_marginTop="@dimen/_4pxv"
+            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_marginBottom="@dimen/_3pxv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Abrigo" />
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/etInterregular12"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_4pxh"
+            android:layout_marginTop="@dimen/_4pxv"
+            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_marginBottom="@dimen/_3pxv"
+            android:lineSpacingExtra="@dimen/_3pxh"
+            android:paddingBottom="@dimen/_10pxv"
+            android:singleLine="false"
+            android:textColorHint="@color/black_900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/hour"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstName"
+            tools:text="Essa é uma mensagem de exemplo!" />
+
+        <TextView
+            android:id="@+id/hour"
+            style="@style/txtInterregular10_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_marginBottom="@dimen/_3pxv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="11:42 AM" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivFirst"
+        android:layout_width="@dimen/_13pxh"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_file"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_file"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

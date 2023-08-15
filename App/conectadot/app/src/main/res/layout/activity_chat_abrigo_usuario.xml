@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            style="@style/groupStyledeep_purple_A100"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_67pxh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageArrowleft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:rotation="-90"
+                    android:src="@drawable/img_arrowup"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageEllipseEight"
+                    cornerRadius="@{@dimen/_20pxh}"
+                    imageRes="@{@drawable/img_ellipse8}"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageArrowleft"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_ellipse8" />
+
+                <TextView
+                    android:id="@+id/txtLaadorAbrigo"
+                    style="@style/txtInterbold16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_9pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toBottomOf="@id/imageEllipseEight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageEllipseEight"
+                    app:layout_constraintTop_toTopOf="@id/imageEllipseEight"
+                    tools:text="@string/msg_la_ador_abrigo2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbarToolbar"
+            app:layout_constraintBottom_toTopOf="@id/clMessage"
+            tools:listitem="@layout/message_sender" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMessage"
+            style="@style/groupStylegray_202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_16pxh"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:layout_marginBottom="@dimen/_18pxv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/linearRowiconemoji"
+                    style="@style/groupStylebluegray_1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:drawableStart="@drawable/emoji_smile"
+                    android:drawablePadding="@dimen/_10pxh"
+                    android:hint="Mensagem"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageSend"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    style="@style/groupStyleamber_1"
+                    android:padding="@dimen/_12pxh"
+                    android:id="@+id/imageSend"
+                    android:layout_width="@dimen/_42pxh"
+                    android:layout_height="@dimen/_42pxh"
+                    android:src="@drawable/img_send"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

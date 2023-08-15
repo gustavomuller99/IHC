@@ -9,13 +9,11 @@ import com.conectadot.app.R
 import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityTelaPrincipalAbrigoBinding
-import com.conectadot.app.modules.listarchatsabrigousurio.ui.ListarChatsAbrigoUsuRioActivity
 import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 import com.conectadot.app.modules.maisdetalhesabrigo.ui.MaisDetalhesAbrigoActivity
 import com.conectadot.app.modules.novoeditaranimalabrigo.ui.NovoEditarAnimalAbrigoActivity
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.model.ListrectangleeightRowModel
 import com.conectadot.app.modules.telaprincipalabrigo.`data`.viewmodel.TelaPrincipalAbrigoVM
-import com.conectadot.app.modules.telaprincipalusurio.ui.TelaPrincipalUsuRioActivity
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -49,10 +47,7 @@ class TelaPrincipalAbrigoActivity :
             }
         }
 
-        binding.imageIconsaxBoldme.setOnClickListener {
-            startActivity(ListarChatsAbrigoUsuRioActivity.getIntent(this, null))
-            overridePendingTransition(R.anim.anim_pull_right, R.anim.anim_push_left)
-        }
+
 
         binding.floatingBtnFloatingactionbutton.setOnClickListener {
             startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, null))
