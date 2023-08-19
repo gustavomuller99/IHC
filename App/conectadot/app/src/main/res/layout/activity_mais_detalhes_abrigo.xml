@@ -81,17 +81,7 @@
                     android:singleLine="true"
                     android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtRaaLuludaP}"
                     style="@style/txtIntersemibold13_1" tools:text="@string/msg_ra_a_lulu_da_p"/>
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtSexoFmea"
-                    android:layout_gravity="start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_32pxh"
-                    android:layout_marginStart="@dimen/_32pxh"
-                    android:layout_marginTop="@dimen/_5pxv"
-                    android:layout_width="wrap_content"
-                    android:singleLine="true"
-                    android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtSexoFmea}"
-                    style="@style/txtIntersemibold13_1" tools:text="@string/lbl_sexo_f_mea"/>
+
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtIdade10meses"
                     android:layout_gravity="start"

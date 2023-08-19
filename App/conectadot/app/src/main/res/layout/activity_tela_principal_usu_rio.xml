@@ -55,16 +55,7 @@
                 android:singleLine="true"
                 android:text="@{telaPrincipalUsuRioVM.telaPrincipalUsuRioModel.txtAbrigoLaador}"
                 style="@style/txtIntersemibold13_1" tools:text="@string/msg_abrigo_la_ador"/>
-            <TextView android:ellipsize="end"
-                android:id="@+id/txtDistance"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_57pxh"
-                android:layout_marginStart="@dimen/_57pxh"
-                android:layout_marginTop="@dimen/_5pxv"
-                android:layout_width="wrap_content"
-                android:singleLine="true"
-                android:text="@{telaPrincipalUsuRioVM.telaPrincipalUsuRioModel.txtDistance}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/msg_dist_ncia_5_0"/>
+
             <LinearLayout android:id="@+id/linearRowforward"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_26pxv"
