@@ -19,12 +19,15 @@ class MaisDetalhesAbrigoActivity :
     BaseActivity<ActivityMaisDetalhesAbrigoBinding>(R.layout.activity_mais_detalhes_abrigo) {
     private val viewModel: MaisDetalhesAbrigoVM by viewModels()
 
+    private var animalid: Int? = null
+
     override fun onInitialized() {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         binding.maisDetalhesAbrigoVM = viewModel
 
         viewModel.navArguments?.getInt("id", -1)?.let {
             viewModel.getAnimalDetails(this, it)
+            animalid = it
         }
 
         viewModel.maisDetalhesAbrigoModel.observe(this) {
@@ -46,13 +49,24 @@ class MaisDetalhesAbrigoActivity :
         }
     }
 
+    override fun onResume(){
+        super.onResume()
+        animalid?.let {
+            viewModel.getAnimalDetails(this, it)
+        }
+    }
+
     override fun setUpClicks() {
         binding.linearRowarrowleft.setOnClickListener {
             finish()
         }
 
         binding.floatingBtnFloatingactionbutton.setOnClickListener {
-            startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, null))
+            viewModel.navArguments?.getInt("id", -1)?.let {
+                val bundle = Bundle()
+                bundle.putInt("id", it)
+                startActivity(NovoEditarAnimalAbrigoActivity.getIntent(this, bundle))
+            }
         }
     }
 

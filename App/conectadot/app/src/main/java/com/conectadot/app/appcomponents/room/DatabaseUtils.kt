@@ -35,6 +35,10 @@ object DatabaseUtils {
         AppDatabase.getDatabase(context).animalDao().insertAll(animal)
     }
 
+    fun updateAnimal(context: Context, animal: Animal, animalID: Int){
+        AppDatabase.getDatabase(context).animalDao().update(animalID, animal.name, animal.species, animal.race, animal.age, animal.size, animal.detailsc, animal.detailsv)
+    }
+
     fun addMessage(context: Context, message: Message) {
         AppDatabase.getDatabase(context).messageDao().addMessage(message)
     }

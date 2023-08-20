@@ -9,6 +9,7 @@ import androidx.room.Index
 import androidx.room.Insert
 import androidx.room.PrimaryKey
 import androidx.room.Query
+import androidx.room.Update
 
 @Entity
 data class Animal(
@@ -34,7 +35,10 @@ interface AnimalDao {
 
     @Query("SELECT * FROM animal WHERE shelter LIKE :shelter")
     fun findByShelter(shelter: String): Animal
-    
+
+    @Query("UPDATE animal SET name = :name, species = :species, race = :race, age = :age, size = :size, detailsc = :detailsc, detailsv = :detailsv WHERE uid =:uid")
+    fun update(uid: Int, name: String?, species: String?, race: String?, age: String?, size: String?, detailsc: String?, detailsv: String?)
+
     @Insert
     fun insertAll(vararg animals: Animal)
 

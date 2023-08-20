@@ -77,6 +77,32 @@ class NovoEditarAnimalAbrigoActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        var editingAnimal = false
+        var animalID = 0
+
+        viewModel.navArguments?.getInt("id", -1)?.let {
+            viewModel.getAnimal(this, it)
+            animalID = it
+        }
+
+        viewModel.currentAnimal.observe(this) {
+            it?.let {
+
+                Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
+                editingAnimal = true
+                binding.txtAnimalName.setText(it.name)
+                binding.txtAnimalSpecies.setText(it.species)
+                binding.txtAnimalRace.setText(it.race)
+                binding.txtAnimalAge.setText(it.age)
+                binding.txtDetailsC.setText(it.detailsc)
+                binding.txtDetailsV.setText(it.detailsv)
+                when(it.size){
+                    "pequeno" -> binding.rbPequeno.toggle()
+                    "medio" -> binding.rbMdio.toggle()
+                    else -> binding.rbGrande.toggle()
+                }
+            }
+        }
 
         binding.btnGroupThirtyEight.setOnClickListener {
 
@@ -142,21 +168,37 @@ class NovoEditarAnimalAbrigoActivity :
                 else -> "grande"
             }
 
-            viewModel.addAnimal(
-                this,
-                Animal(
-                    name = binding.txtAnimalName.text.toString(),
-                    species = binding.txtAnimalSpecies.text.toString(),
-                    race = binding.txtAnimalRace.text.toString(),
-                    age = binding.txtAnimalAge.text.toString(),
-                    size = porte,
-                    detailsc = binding.txtDetailsC.text.toString(),
-                    detailsv = binding.txtDetailsV.text.toString(),
-                    shelter = SharedPreferences.getLoggedId(),
-                    image = imageUri?.toString()
+            if(editingAnimal){
+                viewModel.updateAnimal(
+                    this,
+                    Animal(
+                        name = binding.txtAnimalName.text.toString(),
+                        species = binding.txtAnimalSpecies.text.toString(),
+                        race = binding.txtAnimalRace.text.toString(),
+                        age = binding.txtAnimalAge.text.toString(),
+                        size = porte,
+                        detailsc = binding.txtDetailsC.text.toString(),
+                        detailsv = binding.txtDetailsV.text.toString(),
+                        shelter = SharedPreferences.getLoggedId(),
+                        image = imageUri?.toString()
+                    ), animalID
                 )
-            )
-
+            }else{
+                viewModel.addAnimal(
+                    this,
+                    Animal(
+                        name = binding.txtAnimalName.text.toString(),
+                        species = binding.txtAnimalSpecies.text.toString(),
+                        race = binding.txtAnimalRace.text.toString(),
+                        age = binding.txtAnimalAge.text.toString(),
+                        size = porte,
+                        detailsc = binding.txtDetailsC.text.toString(),
+                        detailsv = binding.txtDetailsV.text.toString(),
+                        shelter = SharedPreferences.getLoggedId(),
+                        image = imageUri?.toString()
+                    )
+                )
+            }
             finish()
         }
     }
