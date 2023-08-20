@@ -87,8 +87,6 @@ class NovoEditarAnimalAbrigoActivity :
 
         viewModel.currentAnimal.observe(this) {
             it?.let {
-
-                Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
                 editingAnimal = true
                 binding.txtAnimalName.setText(it.name)
                 binding.txtAnimalSpecies.setText(it.species)

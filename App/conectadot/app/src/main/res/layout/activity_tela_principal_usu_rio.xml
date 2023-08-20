@@ -24,7 +24,6 @@
 
             <FrameLayout
                 android:id="@+id/frameStackrectangleeight"
-                style="@style/groupStylecornerRadius"
                 android:layout_width="@dimen/_210pxh"
                 android:layout_height="@dimen/_181pxv"
                 android:layout_gravity="center_horizontal"

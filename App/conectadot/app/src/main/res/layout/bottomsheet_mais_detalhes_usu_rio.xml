@@ -29,7 +29,6 @@
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_width="@dimen/_130pxh"
                 android:scaleType="centerCrop" circular="@{true}"
-                imageRes="@{@drawable/img_ellipse2}"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse2"/>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtNomeKyuubi"
@@ -104,6 +103,7 @@
                 android:layout_marginEnd="@dimen/_32pxh"
                 android:layout_marginStart="@dimen/_32pxh"
                 android:layout_marginTop="@dimen/_6pxv"
+                android:layout_marginBottom="@dimen/_16pxh"
                 android:layout_width="match_parent"
                 android:singleLine="true"
                 android:text="@{maisDetalhesUsuRioVM.maisDetalhesUsuRioModel.txtStatusvacina}"
