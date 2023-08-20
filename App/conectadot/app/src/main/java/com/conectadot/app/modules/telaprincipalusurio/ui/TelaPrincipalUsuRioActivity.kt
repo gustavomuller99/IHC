@@ -50,8 +50,13 @@ class TelaPrincipalUsuRioActivity :
         }
 
         binding.imageArrowup.setOnClickListener {
-            val sheet = MaisDetalhesUsuRioBottomsheet()
-            sheet.show(supportFragmentManager, "")
+            viewModel.currentAnimal.value?.uid?.let {
+                val sheet = MaisDetalhesUsuRioBottomsheet()
+                val bundle = Bundle()
+                bundle.putInt("animal_uid", it)
+                sheet.arguments = bundle
+                sheet.show(supportFragmentManager, "")
+            }
         }
 
         binding.btnForward.setOnClickListener {
