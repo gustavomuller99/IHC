@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable name="telaPrincipalUsuRioVM" type="com.conectadot.app.modules.telaprincipalusurio.data.viewmodel.TelaPrincipalUsuRioVM"/>
-    </data>
     <LinearLayout android:gravity="center_horizontal"
         android:id="@+id/linearTelaprincipal"
         android:layout_height="match_parent"
@@ -30,8 +27,6 @@
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_width="match_parent"
                     android:scaleType="fitXY"
-                    cornerRadius="@{@dimen/_16pxh}"
-                    imageRes="@{@drawable/img_rectangle8}"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_rectangle8"/>
             </FrameLayout>
             <TextView android:ellipsize="end"
@@ -42,7 +37,6 @@
                 android:layout_marginTop="@dimen/_20pxv"
                 android:layout_width="wrap_content"
                 android:singleLine="true"
-                android:text="@{telaPrincipalUsuRioVM.telaPrincipalUsuRioModel.txtLanguage}"
                 style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome_kyuubi"/>
             <TextView android:ellipsize="end"
                 android:gravity="center_horizontal"
@@ -51,9 +45,8 @@
                 android:layout_marginEnd="@dimen/_52pxh"
                 android:layout_marginStart="@dimen/_57pxh"
                 android:layout_marginTop="@dimen/_7pxv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:singleLine="true"
-                android:text="@{telaPrincipalUsuRioVM.telaPrincipalUsuRioModel.txtAbrigoLaador}"
                 style="@style/txtIntersemibold13_1" tools:text="@string/msg_abrigo_la_ador"/>
 
             <LinearLayout android:id="@+id/linearRowforward"

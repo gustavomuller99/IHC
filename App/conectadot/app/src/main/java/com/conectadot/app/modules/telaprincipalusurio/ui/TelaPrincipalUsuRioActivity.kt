@@ -2,6 +2,8 @@ package com.conectadot.app.modules.telaprincipalusurio.ui
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.ImageDecoder
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.conectadot.app.R
@@ -19,14 +21,51 @@ class TelaPrincipalUsuRioActivity :
 
     override fun onInitialized() {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
-        binding.telaPrincipalUsuRioVM = viewModel
+        viewModel.getAnimalList(this)
     }
 
     override fun setUpClicks() {
+        viewModel.currentAnimalShelter.observe(this) {
+            it?.let {
+                binding.txtLanguage.text = "${getString(R.string.lbl_nome)} ${viewModel.currentAnimal.value?.name}"
+                binding.txtAbrigoLaador.text = "${getString(R.string.lbl_abrigo)} ${it.name}"
+
+                viewModel.currentAnimal.value?.image?.let {
+                    Uri.parse(it)?.let { uri ->
+                        val bitmap = ImageDecoder.decodeBitmap(
+                            ImageDecoder.createSource(
+                                contentResolver,
+                                uri
+                            )
+                        )
+                        binding.imageRectangleEight.setImageBitmap(bitmap)
+                    }
+                } ?: binding.imageRectangleEight.setImageDrawable(
+                    getDrawable(
+                        R.drawable.dog
+                    )
+                )
+            } ?: setNullValues()
+        }
+
         binding.imageArrowup.setOnClickListener {
             val sheet = MaisDetalhesUsuRioBottomsheet()
             sheet.show(supportFragmentManager, "")
         }
+
+        binding.linearColumnforward.setOnClickListener {
+            /* show info */
+        }
+
+        binding.btnClose.setOnClickListener {
+            viewModel.getNextAnimal(this)
+        }
+    }
+
+    private fun setNullValues() {
+        binding.txtLanguage.text = "Não há mais animais disponíveis!"
+        binding.txtAbrigoLaador.text = ""
+        binding.imageRectangleEight.setImageDrawable(null)
     }
 
     override fun onBackPressed() {

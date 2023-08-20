@@ -18,6 +18,11 @@ object DatabaseUtils {
         return shelters.firstOrNull { it.email == email && it.password == password }?.uid ?: LoginResult.Failed.value
     }
 
+    fun getShelter(context: Context, id: Int?): Shelter? {
+        val shelters = AppDatabase.getDatabase(context).shelterDao().getAll()
+        return shelters.firstOrNull { it.uid == id }
+    }
+
     fun addUser(context: Context, user: User) {
         AppDatabase.getDatabase(context).userDao().insertAll(user)
     }
@@ -38,8 +43,12 @@ object DatabaseUtils {
         return AppDatabase.getDatabase(context).animalDao().getAll().filter { it.shelter == user }
     }
 
+    fun getAllAnimals(context: Context): List<Animal> {
+        return AppDatabase.getDatabase(context).animalDao().getAll()
+    }
+
     fun getAnimalDetails(context: Context, id: Int): Animal{
-        return AppDatabase.getDatabase(context).animalDao().getAll().filter { it.uid == id }.first()
+        return AppDatabase.getDatabase(context).animalDao().getAll().first { it.uid == id }
     }
 }
 
