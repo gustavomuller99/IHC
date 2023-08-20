@@ -10,6 +10,7 @@ import com.conectadot.app.R
 import com.conectadot.app.appcomponents.SharedPreferences
 import com.conectadot.app.appcomponents.base.BaseActivity
 import com.conectadot.app.databinding.ActivityTelaPrincipalUsuRioBinding
+import com.conectadot.app.modules.detalhescontato.ui.DetalhesContatoActivity
 import com.conectadot.app.modules.login.data.viewmodel.LoginResult
 import com.conectadot.app.modules.maisdetalhesusurio.ui.MaisDetalhesUsuRioBottomsheet
 import com.conectadot.app.modules.telaprincipalusurio.`data`.viewmodel.TelaPrincipalUsuRioVM
@@ -53,8 +54,14 @@ class TelaPrincipalUsuRioActivity :
             sheet.show(supportFragmentManager, "")
         }
 
-        binding.linearColumnforward.setOnClickListener {
-            /* show info */
+        binding.btnForward.setOnClickListener {
+            viewModel.currentAnimalShelter.value?.uid?.let {
+                val sheet = DetalhesContatoActivity()
+                val bundle = Bundle()
+                bundle.putInt("id", it)
+                sheet.arguments = bundle
+                sheet.show(supportFragmentManager, null)
+            }
         }
 
         binding.btnClose.setOnClickListener {

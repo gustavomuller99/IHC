@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageArrowdown"
+            android:layout_width="@dimen/_20pxh"
+            android:layout_height="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNome"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/txtIntersemibold13_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_8pxh"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageArrowdown"
+            tools:text="Nome: " />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/txtIntersemibold13_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_8pxh"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNome"
+            tools:text="Email:" />
+
+        <TextView
+            android:id="@+id/tvEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/txtIntersemibold13_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_8pxh"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            tools:text="Endereço" />
+
+        <TextView
+            android:id="@+id/tvState"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/txtIntersemibold13_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_8pxh"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEnd"
+            tools:text="Estado: " />
+
+        <TextView
+            android:id="@+id/tvCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/txtIntersemibold13_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_8pxh"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvState"
+            tools:text="Cidade: "
+            android:layout_marginBottom="@dimen/_16pxh"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
