@@ -13,10 +13,10 @@ import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
 class NovoEditarAnimalAbrigoVM : ViewModel(), KoinComponent {
-  val novoEditarAnimalAbrigoModel: MutableLiveData<NovoEditarAnimalAbrigoModel> =
-      MutableLiveData(NovoEditarAnimalAbrigoModel())
+    val novoEditarAnimalAbrigoModel: MutableLiveData<NovoEditarAnimalAbrigoModel> =
+        MutableLiveData(NovoEditarAnimalAbrigoModel())
 
-  var navArguments: Bundle? = null
+    var navArguments: Bundle? = null
 
     fun addAnimal(context: Context, animal: Animal) {
         CoroutineScope(Dispatchers.Default).launch {

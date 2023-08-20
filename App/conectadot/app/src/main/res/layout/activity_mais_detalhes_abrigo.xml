@@ -46,7 +46,6 @@
                     android:layout_marginTop="@dimen/_48pxv"
                     android:layout_width="@dimen/_130pxh"
                     android:scaleType="centerCrop" circular="@{true}"
-                    imageRes="@{@drawable/img_ellipse2}"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse2"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtNomeKyuubi"
@@ -58,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtNomeKyuubi}"
-                    style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome_kyuubi2"/>
+                    style="@style/txtIntersemibold13_1"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtEspcieCachor"
                     android:layout_gravity="start"
@@ -80,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@{maisDetalhesAbrigoVM.maisDetalhesAbrigoModel.txtRaaLuludaP}"
-                    style="@style/txtIntersemibold13_1" tools:text="@string/msg_ra_a_lulu_da_p"/>
+                    style="@style/txtIntersemibold13_1"/>
 
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtIdade10meses"

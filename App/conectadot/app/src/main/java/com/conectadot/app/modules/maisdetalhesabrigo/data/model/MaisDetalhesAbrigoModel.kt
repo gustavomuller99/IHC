@@ -12,5 +12,6 @@ data class MaisDetalhesAbrigoModel(
   var txtIdade10meses: String? = null,
   var txtPortePequeno: String? = null,
   var txtStatuscastra: String? = null,
-  var txtStatusvacina: String? = null
+  var txtStatusvacina: String? = null,
+  var image: String? = null
 )

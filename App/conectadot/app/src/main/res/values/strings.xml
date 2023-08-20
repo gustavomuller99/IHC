@@ -19,7 +19,7 @@
 <string name="lbl_email_address">Email address</string>
 <string name="lbl_esp_cie">Espécie:</string>
 <string name="lbl_cadastre_se">Cadastre-se</string>
-<string name="msg_status_vacina">Status vacinação: Possui vacinas pendentes</string>
+<string name="msg_status_vacina">Status vacinação:</string>
 <string name="lbl_estado">Estado</string>
 <string name="lbl_m_dio"> Médio</string>
 <string name="lbl_nome_morgana">Nome: Morgana</string>
@@ -27,7 +27,7 @@
 <string name="lbl_abrigo">Abrigo: </string>
 <string name="lbl_porte">Porte: </string>
 <string name="listEmptyAnimal">Adicione um animal para ele aparecer aqui</string>
-<string name="lbl_porte_pequeno">Porte Pequeno</string>
+<string name="lbl_porte_pequeno">Porte:</string>
 <string name="lbl_kyuubi2"> Kyuubi</string>
 <string name="lbl_nome_kyuubi">Nome: Kyuubi </string>
 <string name="lbl_5_0_km">5.0 km</string>
@@ -41,7 +41,7 @@
 <string name="lbl_srd"> SRD</string>
 <string name="lbl_castrado"> Castrado</string>
 <string name="msg_informa_es_adi">Informações adicionais: Sem informações adicionais</string>
-<string name="lbl_idade_10_meses">Idade: 10 meses</string>
+<string name="lbl_idade_10_meses">Idade: </string>
 <string name="lbl_come_e_agora">Começe agora</string>
 <string name="lbl_obrigada">Obrigada!</string>
 <string name="msg_sem_informa_es"> Sem informações adicionais</string>
@@ -57,7 +57,7 @@
 <string name="msg_status_vacina2">Status vacinação:</string>
 <string name="lbl_email">Email</string>
 <string name="lbl_confirmar_senha">Confirmar senha</string>
-<string name="msg_status_castra">Status castração: Castrado</string>
+<string name="msg_status_castra">Status castração:</string>
 <string name="lbl_2">2</string>
 <string name="lbl_race">Raça: </string>
 <string name="msg_la_ador_abrigo">Laçador Abrigo de Animais</string>
@@ -88,7 +88,7 @@
 <string name="lbl_sexo">Sexo:</string>
 <string name="msg_segue_uma_image">Segue uma imagem do animalzinho</string>
 <string name="msg_por_favor_entre">Por favor entre para continuar</string>
-<string name="msg_esp_cie_cachor">Espécie: Cachorro</string>
+<string name="msg_esp_cie_cachor">Espécie:</string>
 <string name="msg_informa_es_adi2">Informações adicionais:</string>
 <string name="msg_detalhes_vacina">Detalhes vacinação</string>
 <string name="msg_dist_ncia_5_0">Distância: 5.0 km</string>

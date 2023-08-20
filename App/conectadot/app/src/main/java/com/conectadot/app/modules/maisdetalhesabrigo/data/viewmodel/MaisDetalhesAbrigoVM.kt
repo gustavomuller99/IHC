@@ -33,8 +33,9 @@ class MaisDetalhesAbrigoVM : ViewModel(), KoinComponent {
                 txtIdade10meses = context.getString(R.string.lbl_idade_10_meses) + " " + animal.age,
                 txtPortePequeno = context.getString(R.string.lbl_porte_pequeno) + " " + animal.size,
                 txtStatuscastra = context.getString(R.string.msg_status_castra) + " " + animal.detailsc,
-                txtStatusvacina = context.getString(R.string.msg_status_vacina) + " " + animal.detailsv
-                ))
+                txtStatusvacina = context.getString(R.string.msg_status_vacina) + " " + animal.detailsv,
+                image = animal.image
+            ))
         }
     }
 
