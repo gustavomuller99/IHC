@@ -3,6 +3,7 @@ package com.conectadot.app.modules.maisdetalhesabrigo.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.conectadot.app.R
 import com.conectadot.app.appcomponents.base.BaseActivity
@@ -20,6 +21,11 @@ class MaisDetalhesAbrigoActivity :
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.maisDetalhesAbrigoVM = viewModel
+
+    viewModel.navArguments?.getInt("id", -1)?.let {
+      viewModel.getAnimalDetails(this, it)
+      Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+    }
   }
 
   override fun setUpClicks(): Unit {

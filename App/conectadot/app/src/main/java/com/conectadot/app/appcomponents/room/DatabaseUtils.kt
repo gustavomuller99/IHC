@@ -37,6 +37,10 @@ object DatabaseUtils {
     fun getAnimalList(context: Context, user: Int): List<Animal> {
         return AppDatabase.getDatabase(context).animalDao().getAll().filter { it.shelter == user }
     }
+
+    fun getAnimalDetails(context: Context, id: Int): Animal{
+        return AppDatabase.getDatabase(context).animalDao().getAll().filter { it.uid == id }.first()
+    }
 }
 
 @Database(entities = [User::class, Shelter::class, Animal::class, Message::class], version = 1)

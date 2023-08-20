@@ -27,6 +27,7 @@ class TelaPrincipalAbrigoVM : ViewModel(), KoinComponent {
             listrectangleeightList.postValue(
                 DatabaseUtils.getAnimalList(context, SharedPreferences.getLoggedId()).map {
                     ListrectangleeightRowModel(
+                        id = it.uid,
                         txtNome = (MyApp.getInstance().resources.getString(R.string.lbl_nome) + " " + it.name),
                         txtRace = (MyApp.getInstance().resources.getString(R.string.lbl_race) + " " + it.race),
                         txtPorte = (MyApp.getInstance().resources.getString(R.string.lbl_porte) + " " + it.size),

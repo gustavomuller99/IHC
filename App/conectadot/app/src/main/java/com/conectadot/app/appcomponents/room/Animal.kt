@@ -30,7 +30,7 @@ interface AnimalDao {
     fun getAll(): List<Animal>
 
     @Query("SELECT * FROM animal WHERE name LIKE :name")
-    fun findByName(name: String): Animal
+    fun findByName(name: String): List<Animal>
 
     @Query("SELECT * FROM animal WHERE shelter LIKE :shelter")
     fun findByShelter(shelter: String): Animal

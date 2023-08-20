@@ -74,7 +74,10 @@ class TelaPrincipalAbrigoActivity :
         position: Int,
         item: ListrectangleeightRowModel
     ): Unit {
-        startActivity(MaisDetalhesAbrigoActivity.getIntent(this, null))
+
+        val bundle = Bundle()
+        bundle.putInt("id", item.id)
+        startActivity(MaisDetalhesAbrigoActivity.getIntent(this, bundle))
     }
 
     companion object {
