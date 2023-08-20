@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{maisDetalhesUsuRioVM.maisDetalhesUsuRioModel.txtNomeKyuubi}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/lbl_nome_kyuubi2"/>
+                style="@style/txtIntersemibold13_1"/>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtEspcieCachor"
                 android:layout_gravity="start"
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="@{maisDetalhesUsuRioVM.maisDetalhesUsuRioModel.txtRaaLuludaP}"
-                style="@style/txtIntersemibold13_1" tools:text="@string/msg_ra_a_lulu_da_p"/>
+                style="@style/txtIntersemibold13_1"/>
 
             <TextView android:ellipsize="end"
                 android:id="@+id/txtIdade10meses"

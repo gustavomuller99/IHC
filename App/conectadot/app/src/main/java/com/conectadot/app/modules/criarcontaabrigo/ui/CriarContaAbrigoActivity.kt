@@ -44,7 +44,7 @@ class CriarContaAbrigoActivity :
                                 password = binding.etShelterPassword.text.toString(),
                                 address = binding.etShelterAddress.text.toString(),
                                 state = binding.etShelterState.text.toString(),
-                                city = binding.etShelterCity.toString(),
+                                city = binding.etShelterCity.text.toString(),
                             )
                         )
 
